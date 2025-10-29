@@ -1,0 +1,23 @@
+{
+	"name": "LightBlueBg",
+	"plugin-id": "TiledBg",
+	"sid": 801464868376196,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"image": {
+		"width": 139,
+		"height": 1154,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"fileType": "image/png",
+		"imageSpriteId": 5077058,
+		"useCollisionPoly": true,
+		"tag": ""
+	}
+}

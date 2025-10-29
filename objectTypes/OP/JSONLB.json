@@ -1,0 +1,8 @@
+{
+	"name": "JSONLB",
+	"plugin-id": "Json",
+	"sid": 192616317943331,
+	"isGlobal": true,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": []
+}

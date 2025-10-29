@@ -18,13 +18,7 @@
 			"sid": 101202596356044
 		}
 	],
-	"behaviorTypes": [
-		{
-			"behaviorId": "Tween",
-			"name": "Tween2",
-			"sid": 192856542883098
-		}
-	],
+	"behaviorTypes": [],
 	"effectTypes": [],
 	"members": [
 		"BtnBombBooster",

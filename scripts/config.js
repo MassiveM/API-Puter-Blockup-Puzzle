@@ -1,5 +1,5 @@
-{
-	"Boosters":
+export const data = {
+    "Boosters":
 	{
 		"Bomb":
 		{

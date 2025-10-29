@@ -188,23 +188,6 @@
 								"instance-variable": "PPos",
 								"value": "Board.Y"
 							}
-						},
-						{
-							"id": "add-child",
-							"objectClass": "Board",
-							"sid": 631780502065661,
-							"parameters": {
-								"child": "RedBoarder",
-								"transform-x": true,
-								"transform-y": true,
-								"transform-w": true,
-								"transform-h": true,
-								"transform-a": true,
-								"transform-o": false,
-								"transform-z-elevation": true,
-								"transform-visibility": false,
-								"destroy-with-parent": false
-							}
 						}
 					],
 					"sid": 964773476841380
@@ -531,15 +514,6 @@
 												"layer": "\"BombSelector\"",
 												"scale": "1.25"
 											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 812234591325836,
-											"parameters": {
-												"variable": "DistanceValue",
-												"value": "DistanceValue * 1.25"
-											}
 										}
 									],
 									"sid": 639418151493773
@@ -768,15 +742,6 @@
 											}
 										},
 										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 885960353789878,
-											"parameters": {
-												"variable": "DistanceValue",
-												"value": "300"
-											}
-										},
-										{
 											"id": "set-y",
 											"objectClass": "Board",
 											"sid": 538747816935285,
@@ -962,105 +927,32 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-eventvar",
+									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 914703069040648,
+									"sid": 838387089806586,
 									"parameters": {
-										"variable": "Name",
+										"first-value": "JSON_LS.Get(\"SFX\")",
 										"comparison": 0,
-										"value": "\"bomb\""
+										"second-value": "1"
 									}
 								}
 							],
-							"actions": [],
-							"sid": 374152203829907,
-							"children": [
+							"actions": [
 								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-two-values",
-											"objectClass": "System",
-											"sid": 841025537745836,
-											"parameters": {
-												"first-value": "JSON_LS.Get(\"SFX\")",
-												"comparison": 0,
-												"second-value": "1"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "play-by-name",
-											"objectClass": "Audio",
-											"sid": 590378397937877,
-											"parameters": {
-												"folder": "sounds",
-												"audio-file-name": "Name",
-												"loop": "not-looping",
-												"volume": "Vol",
-												"stereo-pan": "0",
-												"tag-optional": "Name"
-											}
-										}
-									],
-									"sid": 562490702639622
-								}
-							]
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 809199512983433
+									"id": "play-by-name",
+									"objectClass": "Audio",
+									"sid": 677386849888734,
+									"parameters": {
+										"folder": "sounds",
+										"audio-file-name": "Name",
+										"loop": "not-looping",
+										"volume": "Vol",
+										"stereo-pan": "0",
+										"tag-optional": "Name"
+									}
 								}
 							],
-							"actions": [],
-							"sid": 507470267699566,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-two-values",
-											"objectClass": "System",
-											"sid": 628793479005340,
-											"parameters": {
-												"first-value": "JSON_LS.Get(\"SFX\")",
-												"comparison": 0,
-												"second-value": "1"
-											}
-										},
-										{
-											"id": "is-tag-playing",
-											"objectClass": "Audio",
-											"sid": 107026526854179,
-											"parameters": {
-												"tag": "Name"
-											},
-											"isInverted": true
-										}
-									],
-									"actions": [
-										{
-											"id": "play-by-name",
-											"objectClass": "Audio",
-											"sid": 640617191896825,
-											"parameters": {
-												"folder": "sounds",
-												"audio-file-name": "Name",
-												"loop": "not-looping",
-												"volume": "Vol",
-												"stereo-pan": "0",
-												"tag-optional": "Name"
-											}
-										}
-									],
-									"sid": 209239342848783
-								}
-							]
+							"sid": 475686608834288
 						}
 					]
 				},
@@ -1141,10 +1033,704 @@
 			"sid": 313167829686263
 		},
 		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Ranking",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 796856641097041
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "ArrayLB",
+							"sid": 873582280249714
+						},
+						{
+							"callFunction": "DelRankingItems",
+							"sid": 903658955211742
+						}
+					],
+					"sid": 344271020766162
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-completed",
+							"objectClass": "AJAX",
+							"sid": 271375655001631,
+							"parameters": {
+								"tag": "\"LB\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "parse",
+							"objectClass": "JSONLB",
+							"sid": 354085068842108,
+							"parameters": {
+								"data": "AJAX.LastData"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "ArrayLB",
+							"sid": 126470215382938
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 494643250497453,
+							"parameters": {
+								"object-to-create": "ArrayLB",
+								"layer": "0",
+								"x": "0",
+								"y": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						}
+					],
+					"sid": 422827157823689,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 178674210576801,
+									"parameters": {
+										"name": "\"\"",
+										"start-index": "0",
+										"end-index": "JSONLB.ArraySize(\"Ranking\")-1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "push",
+									"objectClass": "ArrayLB",
+									"sid": 842877326884444,
+									"parameters": {
+										"where": "back",
+										"value": "\"new\"",
+										"axis": "x"
+									}
+								},
+								{
+									"id": "set-at-xy",
+									"objectClass": "ArrayLB",
+									"sid": 880045828489150,
+									"parameters": {
+										"x": "ArrayLB.Width-1",
+										"y": "0",
+										"value": "JSONLB.Get(\"Ranking.\" & loopindex & \".Best\") + int(int(1100-Date.Difference(Date.Now, 1757653239000)/86400000) * (8.5 * (loopindex+1))) "
+									}
+								},
+								{
+									"id": "set-at-xy",
+									"objectClass": "ArrayLB",
+									"sid": 769446483870928,
+									"parameters": {
+										"x": "ArrayLB.Width-1",
+										"y": "1",
+										"value": "JSONLB.Get(\"Ranking.\" & loopindex & \".Name\")"
+									}
+								}
+							],
+							"sid": 201165751249567
+						}
+					]
+				},
+				{
+					"functionName": "DelRankingItems",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "ItemBg",
+							"sid": 618730438973317
+						},
+						{
+							"id": "destroy",
+							"objectClass": "txtItemName",
+							"sid": 136534515619685
+						},
+						{
+							"id": "destroy",
+							"objectClass": "txtItemRank",
+							"sid": 279635053843627
+						},
+						{
+							"id": "destroy",
+							"objectClass": "txtItemScore",
+							"sid": 501079786103000
+						}
+					],
+					"sid": 713824744841291
+				},
+				{
+					"functionName": "OpenRanking",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 244117939100461,
+							"parameters": {
+								"variable": "GameState",
+								"value": "\"Ranking\""
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 489877440058482,
+							"parameters": {
+								"layer": "\"Ranking\"",
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 397036705966056,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "move-to-layer",
+									"objectClass": "BlackBg",
+									"sid": 587402858080181,
+									"parameters": {
+										"layer": "\"Ranking\""
+									}
+								},
+								{
+									"id": "move-to-bottom",
+									"objectClass": "BlackBg",
+									"sid": 833240567458145
+								},
+								{
+									"id": "set-opacity",
+									"objectClass": "BlackBg",
+									"sid": 972584028576765,
+									"parameters": {
+										"opacity": "70"
+									}
+								}
+							],
+							"sid": 542153006915454,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for",
+											"objectClass": "System",
+											"sid": 911821152619737,
+											"parameters": {
+												"name": "\"\"",
+												"start-index": "0",
+												"end-index": "ArrayLB.Width-1"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 253127638295575,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 465149987582323,
+													"parameters": {
+														"first-value": "ArrayLB.At(loopindex,1)",
+														"comparison": 0,
+														"second-value": "\"You\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "delete",
+													"objectClass": "ArrayLB",
+													"sid": 697760839260920,
+													"parameters": {
+														"index": "loopindex",
+														"axis": "x"
+													}
+												}
+											],
+											"sid": 260387582637671
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 388399694534019,
+											"parameters": {
+												"seconds": "0",
+												"use-timescale": true
+											}
+										},
+										{
+											"id": "push",
+											"objectClass": "ArrayLB",
+											"sid": 753046808173829,
+											"parameters": {
+												"where": "back",
+												"value": "\"new\"",
+												"axis": "x"
+											}
+										},
+										{
+											"id": "set-at-xy",
+											"objectClass": "ArrayLB",
+											"sid": 582272997132818,
+											"parameters": {
+												"x": "ArrayLB.Width-1",
+												"y": "1",
+												"value": "\"You\""
+											}
+										},
+										{
+											"id": "set-at-xy",
+											"objectClass": "ArrayLB",
+											"sid": 270125041486449,
+											"parameters": {
+												"x": "ArrayLB.Width-1",
+												"y": "0",
+												"value": "JSON_LS.Get(\"BestScore\")"
+											}
+										},
+										{
+											"id": "sort",
+											"objectClass": "ArrayLB",
+											"sid": 913497110350045,
+											"parameters": {
+												"axis": "x"
+											}
+										},
+										{
+											"id": "reverse",
+											"objectClass": "ArrayLB",
+											"sid": 380836634586232,
+											"parameters": {
+												"axis": "x"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 243593393462457,
+											"parameters": {
+												"seconds": "0",
+												"use-timescale": true
+											}
+										}
+									],
+									"sid": 111069725904275,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "for",
+													"objectClass": "System",
+													"sid": 697383460404743,
+													"parameters": {
+														"name": "\"\"",
+														"start-index": "0",
+														"end-index": "9"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "create-object",
+													"objectClass": "System",
+													"sid": 641480848268934,
+													"parameters": {
+														"object-to-create": "ItemBg",
+														"layer": "\"Ranking\"",
+														"x": "LayoutWidth/2",
+														"y": "490+ loopindex * 120",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "ItemBg",
+													"sid": 674115183118044,
+													"parameters": {
+														"instance-variable": "Index",
+														"value": "loopindex"
+													}
+												}
+											],
+											"sid": 690213501876955,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "create-object",
+															"objectClass": "System",
+															"sid": 846300206669355,
+															"parameters": {
+																"object-to-create": "txtItemRank",
+																"layer": "\"Ranking\"",
+																"x": "ItemBg.BBoxLeft + 30",
+																"y": "ItemBg.Y",
+																"create-hierarchy": false,
+																"template-name": "\"\""
+															}
+														},
+														{
+															"id": "set-font-color",
+															"objectClass": "txtItemRank",
+															"sid": 241236919024412,
+															"parameters": {
+																"color": "rgbEx255(33, 33, 33)"
+															}
+														},
+														{
+															"id": "set-text",
+															"objectClass": "txtItemRank",
+															"sid": 753596106233779,
+															"parameters": {
+																"text": "loopindex + 1"
+															}
+														},
+														{
+															"id": "set-font-size",
+															"objectClass": "txtItemRank",
+															"sid": 923947005295380,
+															"parameters": {
+																"size-pt": "Self.TextWidth > Self.Width ? Self.FaceSize*(Self.Width/Self.TextWidth) : Self.FaceSize"
+															}
+														}
+													],
+													"sid": 379367597856559,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [],
+															"actions": [
+																{
+																	"id": "create-object",
+																	"objectClass": "System",
+																	"sid": 962714128940508,
+																	"parameters": {
+																		"object-to-create": "txtItemName",
+																		"layer": "\"Ranking\"",
+																		"x": "ItemBg.BBoxLeft + 160",
+																		"y": "ItemBg.Y",
+																		"create-hierarchy": false,
+																		"template-name": "\"\""
+																	}
+																},
+																{
+																	"id": "set-font-color",
+																	"objectClass": "txtItemName",
+																	"sid": 708479721342763,
+																	"parameters": {
+																		"color": "rgbEx255(33, 33, 33)"
+																	}
+																},
+																{
+																	"id": "set-text",
+																	"objectClass": "txtItemName",
+																	"sid": 545367786600041,
+																	"parameters": {
+																		"text": "ArrayLB.At(loopindex,1)"
+																	}
+																}
+															],
+															"sid": 792724061824772,
+															"children": [
+																{
+																	"eventType": "variable",
+																	"name": "LastRank",
+																	"type": "number",
+																	"initialValue": "1770",
+																	"comment": "",
+																	"isStatic": false,
+																	"isConstant": false,
+																	"sid": 492603563884530
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "compare-text",
+																			"objectClass": "txtItemName",
+																			"sid": 185728964892133,
+																			"parameters": {
+																				"text-to-compare": "\"You\"",
+																				"case-sensitivity": "ignore-case"
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "set-animation-frame",
+																			"objectClass": "ItemBg",
+																			"sid": 426796175501859,
+																			"parameters": {
+																				"frame-number": "1"
+																			}
+																		}
+																	],
+																	"sid": 812023621875098,
+																	"children": [
+																		{
+																			"eventType": "block",
+																			"conditions": [
+																				{
+																					"id": "compare-text",
+																					"objectClass": "txtItemRank",
+																					"sid": 963501399058263,
+																					"parameters": {
+																						"text-to-compare": "\"10\"",
+																						"case-sensitivity": "ignore-case"
+																					}
+																				}
+																			],
+																			"actions": [
+																				{
+																					"id": "set-text",
+																					"objectClass": "txtItemRank",
+																					"sid": 297178080723518,
+																					"parameters": {
+																						"text": "max(10, int((ArrayLB.At(8,0)-JSON_LS.Get(\"BestScore\"))/(ArrayLB.At(8,0)/LastRank)))"
+																					}
+																				},
+																				{
+																					"id": "set-font-size",
+																					"objectClass": "txtItemRank",
+																					"sid": 873794826042617,
+																					"parameters": {
+																						"size-pt": "Self.TextWidth > Self.Width ? Self.FaceSize*(Self.Width/Self.TextWidth) : Self.FaceSize"
+																					}
+																				}
+																			],
+																			"sid": 496757738742606
+																		}
+																	]
+																}
+															]
+														},
+														{
+															"eventType": "block",
+															"conditions": [],
+															"actions": [
+																{
+																	"id": "create-object",
+																	"objectClass": "System",
+																	"sid": 574980073898358,
+																	"parameters": {
+																		"object-to-create": "txtItemScore",
+																		"layer": "\"Ranking\"",
+																		"x": "ItemBg.BBoxRight - 20",
+																		"y": "ItemBg.Y",
+																		"create-hierarchy": false,
+																		"template-name": "\"\""
+																	}
+																},
+																{
+																	"id": "set-font-color",
+																	"objectClass": "txtItemScore",
+																	"sid": 466783786001791,
+																	"parameters": {
+																		"color": "rgbEx255(33, 33, 33)"
+																	}
+																},
+																{
+																	"id": "set-text",
+																	"objectClass": "txtItemScore",
+																	"sid": 532029321808740,
+																	"parameters": {
+																		"text": "ArrayLB.At(loopindex,0)"
+																	}
+																}
+															],
+															"sid": 487805893161062
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"functionName": "CloseRanking",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 634317474275453,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"callFunction": "DelRankingItems",
+									"sid": 976468643968079
+								}
+							],
+							"sid": 316371878836484,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 417722250556956,
+											"parameters": {
+												"first-value": "LayoutName",
+												"comparison": 0,
+												"second-value": "\"Game\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "move-to-layer",
+											"objectClass": "BlackBg",
+											"sid": 127209215066510,
+											"parameters": {
+												"layer": "\"Pause\""
+											}
+										},
+										{
+											"id": "move-to-bottom",
+											"objectClass": "BlackBg",
+											"sid": 601683441813467
+										},
+										{
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 632749620792269,
+											"parameters": {
+												"layer": "\"Ranking\"",
+												"visibility": "invisible"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 730087711561570,
+											"parameters": {
+												"variable": "GameState",
+												"value": "\"Pause\""
+											}
+										}
+									],
+									"sid": 321027179247003
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 111203233924576,
+											"parameters": {
+												"first-value": "LayoutName",
+												"comparison": 0,
+												"second-value": "\"Home\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-opacity",
+											"objectClass": "BlackBg",
+											"sid": 940773709554764,
+											"parameters": {
+												"opacity": "0"
+											}
+										},
+										{
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 308465894406358,
+											"parameters": {
+												"layer": "\"Ranking\"",
+												"visibility": "invisible"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 885159033176849,
+											"parameters": {
+												"variable": "GameState",
+												"value": "\"Home\""
+											}
+										}
+									],
+									"sid": 199807449776198
+								}
+							]
+						}
+					]
+				}
+			],
+			"sid": 973930237205477
+		},
+		{
 			"eventType": "variable",
 			"name": "AdsTime",
 			"type": "number",
-			"initialValue": "0",
+			"initialValue": "2",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -1236,7 +1822,7 @@
 										{
 											"id": "set-eventvar-value",
 											"objectClass": "System",
-											"sid": 730213590278947,
+											"sid": 646346915917546,
 											"parameters": {
 												"variable": "AdsTime",
 												"value": "6"
@@ -1789,6 +2375,16 @@
 					"eventType": "block",
 					"conditions": [
 						{
+							"id": "on-timer",
+							"objectClass": "txtAdsLable",
+							"sid": 193872580897357,
+							"disabled": true,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"ad-time\""
+							}
+						},
+						{
 							"id": "compare-two-values",
 							"objectClass": "System",
 							"sid": 634261283317822,
@@ -1994,10 +2590,15 @@
 									"id": "set-item",
 									"objectClass": "LocalStorage",
 									"sid": 655257171373404,
+									"disabled": true,
 									"parameters": {
 										"key": "projectname & \"_Data\"",
 										"value": "JSON_LS.ToCompactString"
 									}
+								},
+								{
+									"callFunction": "SavePuterGameData",
+									"sid": 671668550794117
 								},
 								{
 									"callFunction": "SelectBombSpot",
@@ -2037,10 +2638,15 @@
 									"id": "set-item",
 									"objectClass": "LocalStorage",
 									"sid": 840576412545608,
+									"disabled": true,
 									"parameters": {
 										"key": "projectname & \"_Data\"",
 										"value": "JSON_LS.ToCompactString"
 									}
+								},
+								{
+									"callFunction": "SavePuterGameData",
+									"sid": 309911768362431
 								},
 								{
 									"id": "set-eventvar-value",
@@ -2086,10 +2692,15 @@
 									"id": "set-item",
 									"objectClass": "LocalStorage",
 									"sid": 976491890558196,
+									"disabled": true,
 									"parameters": {
 										"key": "projectname & \"_Data\"",
 										"value": "JSON_LS.ToCompactString"
 									}
+								},
+								{
+									"callFunction": "SavePuterGameData",
+									"sid": 566024187471714
 								},
 								{
 									"callFunction": "Refresh",

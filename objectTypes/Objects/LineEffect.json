@@ -1,0 +1,29 @@
+{
+	"name": "LineEffect",
+	"plugin-id": "NinePatch",
+	"sid": 916278518810880,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 933360149336179
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 200,
+		"height": 100,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"fileType": "image/png",
+		"imageSpriteId": 4925210,
+		"useCollisionPoly": true,
+		"tag": ""
+	}
+}

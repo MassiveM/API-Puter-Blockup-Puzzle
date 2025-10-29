@@ -106,6 +106,13 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "TiledBg",
 			"name": "Tiled Background",
 			"author": "Scirra",
@@ -172,8 +179,7 @@
 	"uniqueId": "43p8optb74l",
 	"objectTypes": {
 		"items": [
-			"TutPopup",
-			"TutBlack"
+			"PuterLogo"
 		],
 		"subfolders": [
 			{
@@ -189,6 +195,8 @@
 					"BtnRevive",
 					"BtnSFX",
 					"BtnSFX2",
+					"BtnRanking",
+					"BtnShowRanking",
 					"BtnBombBooster",
 					"BtnGravityBooster",
 					"BtnRefreshBooster",
@@ -197,8 +205,7 @@
 					"BtnWatchAds",
 					"BtnClosePopup",
 					"BtnStartGp",
-					"BtnDoonDook",
-					"BtnNoThanks"
+					"BtnDoonDook"
 				],
 				"subfolders": [],
 				"name": "Buttons"
@@ -218,8 +225,7 @@
 					"txtBoosterInventory",
 					"txtBuyBooster",
 					"txtCombo",
-					"txtStartGpLable",
-					"txtBoosterTut"
+					"txtStartGpLable"
 				],
 				"subfolders": [],
 				"name": "Texts"
@@ -237,51 +243,35 @@
 			},
 			{
 				"items": [
+					"AJAX",
+					"ArrayLB",
+					"Audio",
+					"Browser",
+					"Date",
+					"JSON_Config",
+					"JSON_LS",
+					"JSON_Shapes",
+					"JSONLB",
+					"Keyboard",
+					"LocalStorage",
+					"Mouse",
+					"PlatformInfo",
+					"Touch",
+					"txtItemName",
+					"txtItemRank",
+					"txtItemScore",
+					"txtLeaderboardTitle"
+				],
+				"subfolders": [],
+				"name": "OP"
+			},
+			{
+				"items": [
 					"Bg",
 					"BgClouds",
 					"BgHills",
 					"BgStuff",
 					"BlackBg",
-					"ItemBg",
-					"LightBlueBg"
-				],
-				"subfolders": [],
-				"name": "BgStuff"
-			},
-			{
-				"items": [
-					"AJAX",
-					"Audio",
-					"Browser",
-					"Date",
-					"Keyboard",
-					"LocalStorage",
-					"Mouse",
-					"PlatformInfo",
-					"Touch"
-				],
-				"subfolders": [],
-				"name": "General"
-			},
-			{
-				"items": [
-					"JSON_Config",
-					"JSON_LS",
-					"JSON_Shapes"
-				],
-				"subfolders": [],
-				"name": "Jsons"
-			},
-			{
-				"items": [
-					"BuyBoosterPopup",
-					"Popup"
-				],
-				"subfolders": [],
-				"name": "Popups"
-			},
-			{
-				"items": [
 					"Block",
 					"BlockBelow",
 					"BlockShadow",
@@ -292,6 +282,7 @@
 					"BombParticles",
 					"BoosterIcon",
 					"BoosterInventoryLable",
+					"BuyBoosterPopup",
 					"BuyBoosterTxtLable",
 					"Cheerful",
 					"CircleGlow",
@@ -315,14 +306,17 @@
 					"GOCupParent",
 					"Hand",
 					"Heart",
+					"ItemBg",
+					"LeaderboardPopup2",
+					"LightBlueBg",
 					"LineEffect",
 					"Logo",
 					"LogoLight",
 					"NoSpaceLeft",
 					"Particles",
 					"PlaceHolder",
+					"Popup",
 					"RadialProgress",
-					"RedBoarder",
 					"ReviveCircle",
 					"ScorePanel",
 					"Shaker",
@@ -340,7 +334,7 @@
 					"TutTimer"
 				],
 				"subfolders": [],
-				"name": "OtherGameObjects"
+				"name": "Objects"
 			}
 		]
 	},
@@ -377,7 +371,32 @@
 	},
 	"rootFileFolders": {
 		"script": {
-			"items": [],
+			"items": [
+				{
+					"name": "shapes.js",
+					"type": "application/javascript",
+					"sid": 628270426674036,
+					"script-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "main.js",
+					"type": "application/javascript",
+					"sid": 712475507581453,
+					"script-info": {
+						"purpose": "imports-for-events"
+					}
+				},
+				{
+					"name": "config.js",
+					"type": "application/javascript",
+					"sid": 137701250080800,
+					"script-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"sound": {
@@ -723,32 +742,7 @@
 			"subfolders": []
 		},
 		"general": {
-			"items": [
-				{
-					"name": "shapes.json",
-					"type": "application/json",
-					"sid": 109718797064797,
-					"file-info": {
-						"purpose": "none"
-					}
-				},
-				{
-					"name": "ranking.json",
-					"type": "application/json",
-					"sid": 553851438719636,
-					"file-info": {
-						"purpose": "none"
-					}
-				},
-				{
-					"name": "Config.json",
-					"type": "application/json",
-					"sid": 118104682735815,
-					"file-info": {
-						"purpose": "none"
-					}
-				}
-			],
+			"items": [],
 			"subfolders": []
 		}
 	},
@@ -771,7 +765,7 @@
 	},
 	"properties": {
 		"description": "BlockUp Puzzle",
-		"version": "1.0.1",
+		"version": "1.0.0",
 		"autoIncrementVersion": false,
 		"author": "DoonDookStudio",
 		"authorEmail": "",
@@ -791,9 +785,9 @@
 			0
 		],
 		"splashColor": [
-			1,
-			1,
-			1,
+			0,
+			0,
+			0,
 			0
 		],
 		"useThemeColor": false,

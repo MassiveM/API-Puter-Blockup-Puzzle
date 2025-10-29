@@ -72,13 +72,6 @@
 			"desc": "",
 			"show": true,
 			"sid": 222283812260084
-		},
-		{
-			"name": "IsHovering",
-			"type": "number",
-			"desc": "",
-			"show": true,
-			"sid": 882238118844581
 		}
 	],
 	"behaviorTypes": [

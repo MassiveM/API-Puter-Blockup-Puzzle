@@ -38,6 +38,8 @@
 		"BtnPlay",
 		"BtnRevive",
 		"BtnGOReset",
+		"BtnRanking",
+		"BtnShowRanking",
 		"BtnBombBooster",
 		"BtnGravityBooster",
 		"BtnRefreshBooster",
@@ -46,7 +48,6 @@
 		"BtnWatchAds",
 		"BtnClosePopup",
 		"BtnStartGp",
-		"BtnDoonDook",
-		"BtnNoThanks"
+		"BtnDoonDook"
 	]
 }

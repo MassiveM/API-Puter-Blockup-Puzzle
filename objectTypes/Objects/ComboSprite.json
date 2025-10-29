@@ -1,0 +1,79 @@
+{
+	"name": "ComboSprite",
+	"plugin-id": "Sprite",
+	"sid": 528058145196070,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [
+		{
+			"name": "RemoveListWidth",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 744469273058791
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 145236837931846
+		},
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 714498789329511
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 587,
+						"height": 187,
+						"originX": 0.5,
+						"originY": 0.5429864253393665,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 8638478,
+						"collisionPoly": {
+							"points": [
+								0.05668567588146137,
+								0.1884450391237722,
+								0.5,
+								0.32139805895462004,
+								0.9113637422000855,
+								0.32139805895462004,
+								0.9885776485030141,
+								0.5429864253393665,
+								0.9619521635709696,
+								0.9750837397896222,
+								0.5,
+								1,
+								0.04071038492223474,
+								0.9640043214703848,
+								0.008759803003781517,
+								0.5429864253393665
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 702312515309708,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

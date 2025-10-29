@@ -19,77 +19,43 @@
 					],
 					"actions": [
 						{
-							"id": "request-project-file",
-							"objectClass": "AJAX",
-							"sid": 482823202244187,
-							"parameters": {
-								"tag": "\"shapes\"",
-								"file": "shapes.json"
-							}
-						}
-					],
-					"sid": 523686511152993
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-completed",
-							"objectClass": "AJAX",
-							"sid": 515622921667792,
-							"parameters": {
-								"tag": "\"shapes\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "parse",
-							"objectClass": "JSON_Shapes",
-							"sid": 466552704796216,
-							"parameters": {
-								"data": "AJAX.LastData"
-							}
+							"type": "script",
+							"language": "javascript",
+							"script": [
+								"runtime.objects.JSON_Config.getFirstInstance().setJsonDataCopy(config.data);",
+								"runtime.objects.JSON_Shapes.getFirstInstance().setJsonDataCopy(shapes);"
+							]
 						},
 						{
-							"id": "request-project-file",
-							"objectClass": "AJAX",
-							"sid": 712218140414917,
-							"parameters": {
-								"tag": "\"Config\"",
-								"file": "Config.json"
-							}
-						}
-					],
-					"sid": 489845802672233
-				},
-				{
-					"eventType": "block",
-					"conditions": [
+							"type": "comment",
+							"text": "Puter API"
+						},
 						{
-							"id": "on-completed",
-							"objectClass": "AJAX",
-							"sid": 840273358220277,
-							"parameters": {
-								"tag": "\"Config\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "parse",
-							"objectClass": "JSON_Config",
-							"sid": 346717922501570,
-							"parameters": {
-								"data": "AJAX.LastData"
-							}
+							"type": "script",
+							"language": "javascript",
+							"script": [
+								"var puterScript = document.createElement(\"script\");",
+								"puterScript.src = \"https://js.puter.com/v2/\";",
+								"window.document.head.append(puterScript);",
+								"puterScript.onload = getGameData;",
+								"",
+								"async function getGameData() {",
+								"    const response = await puter.kv.get('gameData');",
+								"    if (response) {",
+								"        runtime.callFunction(\"GetPuterData\", response);",
+								"    }",
+								"    else {",
+								"        runtime.callFunction(\"SetPuterDefaultData\");",
+								"    }",
+								"}"
+							]
 						},
 						{
 							"callFunction": "CountAllShapesBlocks",
-							"sid": 480721193977983
+							"sid": 839944401077330
 						}
 					],
-					"sid": 296273677655185
+					"sid": 523686511152993
 				},
 				{
 					"functionName": "CountAllShapesBlocks",
@@ -167,7 +133,8 @@
 											}
 										}
 									],
-									"sid": 148737477671736
+									"sid": 148737477671736,
+									"disabled": true
 								}
 							]
 						}
@@ -333,7 +300,8 @@
 							"sid": 330516649799936
 						}
 					],
-					"sid": 440291488124114
+					"sid": 440291488124114,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -422,28 +390,28 @@
 						{
 							"id": "set-value",
 							"objectClass": "JSON_LS",
-							"sid": 104064860718529,
-							"parameters": {
-								"path": "\"Bomb-Boooster-Price\"",
-								"value": "JSON_Config.Get(\"Boosters.Bomb.Price\")"
-							}
-						},
-						{
-							"id": "set-value",
-							"objectClass": "JSON_LS",
-							"sid": 967664148479613,
+							"sid": 812310905073206,
 							"parameters": {
 								"path": "\"Gravity-Boooster-Price\"",
-								"value": "JSON_Config.Get(\"Boosters.Gravity.Price\")"
+								"value": "150"
 							}
 						},
 						{
 							"id": "set-value",
 							"objectClass": "JSON_LS",
-							"sid": 858497329931388,
+							"sid": 885913302436977,
 							"parameters": {
 								"path": "\"Refresh-Boooster-Price\"",
-								"value": "JSON_Config.Get(\"Boosters.Refresh.Price\")"
+								"value": "150"
+							}
+						},
+						{
+							"id": "set-value",
+							"objectClass": "JSON_LS",
+							"sid": 648044320157873,
+							"parameters": {
+								"path": "\"Bomb-Boooster-Price\"",
+								"value": "150"
 							}
 						},
 						{
@@ -461,7 +429,223 @@
 						}
 					],
 					"sid": 857843310337370,
+					"disabled": true,
 					"isOrBlock": true
+				},
+				{
+					"functionName": "GetPuterData",
+					"functionDescription": "",
+					"functionCategory": "Puter API",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "vGameData",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 207948661795996
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 245294388788696,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "parse",
+									"objectClass": "JSON_LS",
+									"sid": 868546887857680,
+									"parameters": {
+										"data": "vGameData"
+									}
+								},
+								{
+									"callFunction": "LSLoaded",
+									"sid": 656084824478322
+								}
+							],
+							"sid": 676994127803522
+						}
+					]
+				},
+				{
+					"functionName": "SetPuterDefaultData",
+					"functionDescription": "",
+					"functionCategory": "Puter API",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 930050034621258,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-value",
+									"objectClass": "JSON_LS",
+									"sid": 540661895186005,
+									"parameters": {
+										"path": "\"SFX\"",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-value",
+									"objectClass": "JSON_LS",
+									"sid": 263144623373138,
+									"parameters": {
+										"path": "\"Music\"",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-value",
+									"objectClass": "JSON_LS",
+									"sid": 924812393920136,
+									"parameters": {
+										"path": "\"BestScore\"",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-value",
+									"objectClass": "JSON_LS",
+									"sid": 279222711973903,
+									"parameters": {
+										"path": "\"Coins\"",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-value",
+									"objectClass": "JSON_LS",
+									"sid": 188800424188800,
+									"parameters": {
+										"path": "\"Bomb-Boooster\"",
+										"value": "JSON_Config.Get(\"Boosters.Bomb.Inventory\")"
+									}
+								},
+								{
+									"id": "set-value",
+									"objectClass": "JSON_LS",
+									"sid": 952342365503791,
+									"parameters": {
+										"path": "\"Gravity-Boooster\"",
+										"value": "JSON_Config.Get(\"Boosters.Gravity.Inventory\")"
+									}
+								},
+								{
+									"id": "set-value",
+									"objectClass": "JSON_LS",
+									"sid": 206461471815012,
+									"parameters": {
+										"path": "\"Refresh-Boooster\"",
+										"value": "JSON_Config.Get(\"Boosters.Refresh.Inventory\")"
+									}
+								},
+								{
+									"id": "set-value",
+									"objectClass": "JSON_LS",
+									"sid": 951603046897758,
+									"parameters": {
+										"path": "\"Bomb-Boooster-Price\"",
+										"value": "JSON_Config.Get(\"Boosters.Bomb.Price\")"
+									}
+								},
+								{
+									"id": "set-value",
+									"objectClass": "JSON_LS",
+									"sid": 766032462062591,
+									"parameters": {
+										"path": "\"Gravity-Boooster-Price\"",
+										"value": "JSON_Config.Get(\"Boosters.Gravity.Price\")"
+									}
+								},
+								{
+									"id": "set-value",
+									"objectClass": "JSON_LS",
+									"sid": 906562201821096,
+									"parameters": {
+										"path": "\"Refresh-Boooster-Price\"",
+										"value": "JSON_Config.Get(\"Boosters.Refresh.Price\")"
+									}
+								},
+								{
+									"id": "set-value",
+									"objectClass": "JSON_LS",
+									"sid": 270082963936669,
+									"parameters": {
+										"path": "\"Tut\"",
+										"value": "1"
+									}
+								},
+								{
+									"callFunction": "LSLoaded",
+									"sid": 460831932922610
+								}
+							],
+							"sid": 908902924995303
+						}
+					]
+				},
+				{
+					"functionName": "SavePuterGameData",
+					"functionDescription": "",
+					"functionCategory": "Puter API",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 679480442544065,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "vGameData",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 538972687681197
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 658940244355014,
+									"parameters": {
+										"variable": "vGameData",
+										"value": "JSON_LS.ToCompactString"
+									}
+								},
+								{
+									"type": "script",
+									"language": "javascript",
+									"script": [
+										"await puter.kv.set('gameData', localVars.vGameData);"
+									]
+								}
+							],
+							"sid": 576994045193502
+						}
+					]
 				}
 			],
 			"sid": 430240843947771

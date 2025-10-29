@@ -5,7 +5,45 @@
 			"name": "Layer 0",
 			"overriden": 0,
 			"subLayers": [],
-			"instances": [],
+			"instances": [
+				{
+					"type": "PuterLogo",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 183,
+					"sid": 249888335341034,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"instanceFolderItem": {
+						"sid": 249888335341034,
+						"expanded": true
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 540,
+						"y": 960,
+						"width": 723,
+						"height": 693,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							0,
+							0.06274509803921569,
+							0.8509803921568627,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
 			"sid": 893758909839469,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
@@ -18,9 +56,9 @@
 				1
 			],
 			"backgroundColor": [
-				0,
-				0,
-				0,
+				1,
+				1,
+				1,
 				1
 			],
 			"isTransparent": false,
@@ -50,7 +88,7 @@
 				"depth": 1
 			},
 			"uid": 16,
-			"sid": 519892946701758,
+			"sid": 498800929233418,
 			"tags": "",
 			"instanceVariables": {}
 		},
@@ -62,7 +100,7 @@
 				"depth": 1
 			},
 			"uid": 17,
-			"sid": 332640111550733,
+			"sid": 344688548747780,
 			"tags": "",
 			"instanceVariables": {}
 		},
@@ -74,7 +112,7 @@
 				"depth": 1
 			},
 			"uid": 21,
-			"sid": 942658543430556,
+			"sid": 488179673140494,
 			"tags": "",
 			"instanceVariables": {}
 		},
@@ -86,7 +124,7 @@
 				"depth": 1
 			},
 			"uid": 50,
-			"sid": 829461807599953,
+			"sid": 519721784041303,
 			"tags": "",
 			"instanceVariables": {}
 		},
@@ -94,7 +132,7 @@
 			"type": "JSON_LS",
 			"properties": {},
 			"uid": 55,
-			"sid": 266426773033505,
+			"sid": 747870158729722,
 			"tags": "",
 			"instanceVariables": {}
 		},
@@ -106,7 +144,27 @@
 				"depth": 1
 			},
 			"uid": 57,
-			"sid": 485438738624984,
+			"sid": 661747481213656,
+			"tags": "",
+			"instanceVariables": {}
+		},
+		{
+			"type": "ArrayLB",
+			"properties": {
+				"width": 0,
+				"height": 2,
+				"depth": 1
+			},
+			"uid": 106,
+			"sid": 283442167652733,
+			"tags": "",
+			"instanceVariables": {}
+		},
+		{
+			"type": "JSONLB",
+			"properties": {},
+			"uid": 110,
+			"sid": 540805114895987,
 			"tags": "",
 			"instanceVariables": {}
 		},
@@ -114,7 +172,7 @@
 			"type": "JSON_Config",
 			"properties": {},
 			"uid": 179,
-			"sid": 483852081710632,
+			"sid": 813119662410241,
 			"tags": "",
 			"instanceVariables": {}
 		}

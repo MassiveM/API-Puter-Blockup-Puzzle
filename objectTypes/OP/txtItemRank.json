@@ -1,0 +1,18 @@
+{
+	"name": "txtItemRank",
+	"plugin-id": "Text",
+	"sid": 109627832506627,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [
+		{
+			"name": "index",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 738843239041574
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": []
+}

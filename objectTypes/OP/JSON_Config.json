@@ -1,0 +1,8 @@
+{
+	"name": "JSON_Config",
+	"plugin-id": "Json",
+	"sid": 764084969713641,
+	"isGlobal": true,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": []
+}

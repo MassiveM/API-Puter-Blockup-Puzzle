@@ -268,10 +268,15 @@
 											"id": "set-item",
 											"objectClass": "LocalStorage",
 											"sid": 769000182196578,
+											"disabled": true,
 											"parameters": {
 												"key": "projectname & \"_Data\"",
 												"value": "JSON_LS.ToCompactString"
 											}
+										},
+										{
+											"callFunction": "SavePuterGameData",
+											"sid": 131031298173704
 										}
 									],
 									"sid": 411393085751735
@@ -318,10 +323,15 @@
 											"id": "set-item",
 											"objectClass": "LocalStorage",
 											"sid": 496054942502043,
+											"disabled": true,
 											"parameters": {
 												"key": "projectname & \"_Data\"",
 												"value": "JSON_LS.ToCompactString"
 											}
+										},
+										{
+											"callFunction": "SavePuterGameData",
+											"sid": 549825701988756
 										}
 									],
 									"sid": 599869894473556
@@ -452,6 +462,10 @@
 												"\"click\"",
 												"0"
 											]
+										},
+										{
+											"callFunction": "CloseRanking",
+											"sid": 343295985945488
 										}
 									],
 									"sid": 356520122695226
@@ -505,12 +519,12 @@
 											]
 										},
 										{
-											"id": "open-url-in-new-window",
+											"id": "go-to-url",
 											"objectClass": "Browser",
-											"sid": 443754324856168,
+											"sid": 432032596281611,
 											"parameters": {
 												"url": "\"https://doondook.studio/\"",
-												"tag": "\"NewWindow\""
+												"target": "parent"
 											}
 										}
 									],

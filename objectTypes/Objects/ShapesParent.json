@@ -1,0 +1,110 @@
+{
+	"name": "ShapesParent",
+	"plugin-id": "Sprite",
+	"sid": 304471097200841,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [
+		{
+			"name": "InitSize",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 383375523652018
+		},
+		{
+			"name": "DX",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 736892959466116
+		},
+		{
+			"name": "PH",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 851455165385752
+		},
+		{
+			"name": "MinX",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 481170955793173
+		},
+		{
+			"name": "MaxX",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 272865084358549
+		},
+		{
+			"name": "MinY",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 513710957392397
+		},
+		{
+			"name": "MaxY",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 567818691977238
+		},
+		{
+			"name": "Shape",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 909984099190611
+		},
+		{
+			"name": "Clickable",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 799388272402318
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 658687275832820
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 50,
+						"height": 50,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 1394533,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 103876933233668,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

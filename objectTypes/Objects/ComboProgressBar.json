@@ -1,0 +1,63 @@
+{
+	"name": "ComboProgressBar",
+	"plugin-id": "Sprite",
+	"sid": 741628488902271,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "skymen_RadialProgress",
+			"name": "RadialProgress",
+			"sid": 755000459952831
+		},
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 840539856073967
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 70,
+						"height": 70,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 3197573,
+						"collisionPoly": {
+							"points": [
+								0.9752604166666665,
+								1,
+								0.024739583333333336,
+								1,
+								0.024739583333333336,
+								0,
+								0.9752604166666665,
+								0
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 894545057042397,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}
