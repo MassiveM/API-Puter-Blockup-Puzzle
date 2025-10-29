@@ -1,0 +1,60 @@
+{
+	"name": "BtnClosePopup",
+	"plugin-id": "Sprite",
+	"sid": 319032592913503,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 107,
+						"height": 106,
+						"originX": 0.49863446167723185,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 1121860,
+						"collisionPoly": {
+							"points": [
+								0.07804865826463883,
+								0,
+								0.9574553381273333,
+								0.05049944506104328,
+								0.9738417980005513,
+								0.1344062153163152,
+								0.9738417980005513,
+								0.8476137624861265,
+								0.9274134950264338,
+								0.9375138734739179,
+								0.037082508581594044,
+								0.8955604883462819,
+								0.02615820199944877,
+								0.8476137624861265,
+								0.028889278644985087,
+								0.10443951165371809
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 263424891155147,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -1,0 +1,88 @@
+{
+	"name": "GameOverPanle",
+	"plugin-id": "Sprite",
+	"sid": 961599092388518,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [
+		{
+			"name": "State",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 532014054417492
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 619,
+						"height": 205,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 4223032,
+						"collisionPoly": {
+							"points": [
+								0.08191078800933406,
+								0.004878048780487805,
+								0.979002872015796,
+								0.08516809492419249,
+								0.931933225632741,
+								0.98843111404087,
+								0.020997127984203914,
+								0.9148319050758076
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 928,
+						"height": 189,
+						"originX": 0.4994612068965517,
+						"originY": 0.291005291005291,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 8257794,
+						"collisionPoly": {
+							"points": [
+								0.06026612096744323,
+								0,
+								0.9873942090447795,
+								0,
+								0.9785327697322124,
+								0.696326104776809,
+								0.9187180543723842,
+								0.7182353379536478,
+								0.03478948294381273,
+								0.6671137938743573
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 550181150967880,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

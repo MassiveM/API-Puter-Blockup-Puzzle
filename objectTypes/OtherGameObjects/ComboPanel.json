@@ -1,0 +1,60 @@
+{
+	"name": "ComboPanel",
+	"plugin-id": "Sprite",
+	"sid": 991281803825787,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 88,
+						"height": 88,
+						"originX": 0.4943181818181818,
+						"originY": 0.5056818181818182,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 497366,
+						"collisionPoly": {
+							"points": [
+								0.47416934288537543,
+								0.03263217279174726,
+								0.5144670207509882,
+								0.03263217279174726,
+								0.9476670578063242,
+								0.35142649903288203,
+								0.9476670578063242,
+								0.4131286266924565,
+								0.7764019268774703,
+								0.9375967117988394,
+								0.20216001729249014,
+								0.9067456479690521,
+								0.04096930583003952,
+								0.42341231463571893,
+								0.051043725296442695,
+								0.35142649903288203
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 624362682496574,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

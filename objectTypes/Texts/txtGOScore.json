@@ -1,0 +1,29 @@
+{
+	"name": "txtGOScore",
+	"plugin-id": "Spritefont2",
+	"sid": 874768239578159,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 536158810894964
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 1024,
+		"height": 128,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"fileType": "image/png",
+		"imageSpriteId": 4895972,
+		"useCollisionPoly": true,
+		"tag": ""
+	}
+}

@@ -1,0 +1,511 @@
+{
+	"name": "LoaderSheet",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Load",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 276511810492978
+						}
+					],
+					"actions": [
+						{
+							"id": "request-project-file",
+							"objectClass": "AJAX",
+							"sid": 482823202244187,
+							"parameters": {
+								"tag": "\"shapes\"",
+								"file": "shapes.json"
+							}
+						}
+					],
+					"sid": 523686511152993
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-completed",
+							"objectClass": "AJAX",
+							"sid": 515622921667792,
+							"parameters": {
+								"tag": "\"shapes\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "parse",
+							"objectClass": "JSON_Shapes",
+							"sid": 466552704796216,
+							"parameters": {
+								"data": "AJAX.LastData"
+							}
+						},
+						{
+							"id": "request-project-file",
+							"objectClass": "AJAX",
+							"sid": 712218140414917,
+							"parameters": {
+								"tag": "\"Config\"",
+								"file": "Config.json"
+							}
+						}
+					],
+					"sid": 489845802672233
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-completed",
+							"objectClass": "AJAX",
+							"sid": 840273358220277,
+							"parameters": {
+								"tag": "\"Config\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "parse",
+							"objectClass": "JSON_Config",
+							"sid": 346717922501570,
+							"parameters": {
+								"data": "AJAX.LastData"
+							}
+						},
+						{
+							"callFunction": "CountAllShapesBlocks",
+							"sid": 480721193977983
+						}
+					],
+					"sid": 296273677655185
+				},
+				{
+					"functionName": "CountAllShapesBlocks",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-size",
+							"objectClass": "ArrayBlocksCount",
+							"sid": 109726631186865,
+							"parameters": {
+								"width": "0",
+								"height": "1",
+								"depth": "1"
+							}
+						}
+					],
+					"sid": 123030461162670,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 969055124156797,
+									"parameters": {
+										"name": "\"\"",
+										"start-index": "0",
+										"end-index": "JSON_Shapes.ArraySize(\"Shapes\")-1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "push",
+									"objectClass": "ArrayBlocksCount",
+									"sid": 452150719593611,
+									"parameters": {
+										"where": "back",
+										"value": "Functions.CountShapeBlocks(loopindex)",
+										"axis": "x"
+									}
+								}
+							],
+							"sid": 674218690607965,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 847111680173397,
+											"parameters": {
+												"first-value": "loopindex",
+												"comparison": 0,
+												"second-value": "JSON_Shapes.ArraySize(\"Shapes\")-1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "check-item-exists",
+											"objectClass": "LocalStorage",
+											"sid": 940038837572978,
+											"parameters": {
+												"key": "projectname & \"_Data\""
+											}
+										}
+									],
+									"sid": 148737477671736
+								}
+							]
+						}
+					]
+				},
+				{
+					"functionName": "CountShapeBlocks",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "number",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "Shape",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 752407911214457
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 884197115702359,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "vCount",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 989009899147699
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 322908273383599,
+									"parameters": {
+										"name": "\"y\"",
+										"start-index": "0",
+										"end-index": "4"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 281028872422351,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for",
+											"objectClass": "System",
+											"sid": 223368923525487,
+											"parameters": {
+												"name": "\"x\"",
+												"start-index": "0",
+												"end-index": "4"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 362714434821916,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 267301998190074,
+													"parameters": {
+														"first-value": "JSON_Shapes.Get(\"Shapes.\" & Shape & \".\" & loopindex(\"y\") & \".\" & loopindex(\"x\"))",
+														"comparison": 0,
+														"second-value": "1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "add-to-eventvar",
+													"objectClass": "System",
+													"sid": 661038430169122,
+													"parameters": {
+														"variable": "vCount",
+														"value": "1"
+													}
+												}
+											],
+											"sid": 365026361481328
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 406240693529285,
+													"parameters": {
+														"first-value": "loopindex(\"x\")",
+														"comparison": 0,
+														"second-value": "4"
+													}
+												},
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 916447480189780,
+													"parameters": {
+														"first-value": "loopindex(\"y\")",
+														"comparison": 0,
+														"second-value": "4"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-function-return-value",
+													"objectClass": "Functions",
+													"sid": 786629911886582,
+													"parameters": {
+														"value": "vCount"
+													}
+												}
+											],
+											"sid": 714816552927749
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-exists",
+							"objectClass": "LocalStorage",
+							"sid": 964277244764363,
+							"parameters": {
+								"key": "projectname & \"_Data\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "parse",
+							"objectClass": "JSON_LS",
+							"sid": 543608174516685,
+							"parameters": {
+								"data": "LocalStorage.ItemValue"
+							}
+						},
+						{
+							"callFunction": "LSLoaded",
+							"sid": 330516649799936
+						}
+					],
+					"sid": 440291488124114
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-missing",
+							"objectClass": "LocalStorage",
+							"sid": 454940572869238,
+							"parameters": {
+								"key": "projectname & \"_Data\""
+							}
+						},
+						{
+							"id": "on-item-removed",
+							"objectClass": "LocalStorage",
+							"sid": 665223125522673,
+							"parameters": {
+								"key": "projectname & \"_Data\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-value",
+							"objectClass": "JSON_LS",
+							"sid": 553545932108458,
+							"parameters": {
+								"path": "\"SFX\"",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-value",
+							"objectClass": "JSON_LS",
+							"sid": 843317417835978,
+							"parameters": {
+								"path": "\"Music\"",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-value",
+							"objectClass": "JSON_LS",
+							"sid": 752702660759636,
+							"parameters": {
+								"path": "\"BestScore\"",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-value",
+							"objectClass": "JSON_LS",
+							"sid": 792071536932538,
+							"parameters": {
+								"path": "\"Coins\"",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-value",
+							"objectClass": "JSON_LS",
+							"sid": 969710292150735,
+							"parameters": {
+								"path": "\"Bomb-Boooster\"",
+								"value": "JSON_Config.Get(\"Boosters.Bomb.Inventory\")"
+							}
+						},
+						{
+							"id": "set-value",
+							"objectClass": "JSON_LS",
+							"sid": 443337876563883,
+							"parameters": {
+								"path": "\"Gravity-Boooster\"",
+								"value": "JSON_Config.Get(\"Boosters.Gravity.Inventory\")"
+							}
+						},
+						{
+							"id": "set-value",
+							"objectClass": "JSON_LS",
+							"sid": 151289134526331,
+							"parameters": {
+								"path": "\"Refresh-Boooster\"",
+								"value": "JSON_Config.Get(\"Boosters.Refresh.Inventory\")"
+							}
+						},
+						{
+							"id": "set-value",
+							"objectClass": "JSON_LS",
+							"sid": 104064860718529,
+							"parameters": {
+								"path": "\"Bomb-Boooster-Price\"",
+								"value": "JSON_Config.Get(\"Boosters.Bomb.Price\")"
+							}
+						},
+						{
+							"id": "set-value",
+							"objectClass": "JSON_LS",
+							"sid": 967664148479613,
+							"parameters": {
+								"path": "\"Gravity-Boooster-Price\"",
+								"value": "JSON_Config.Get(\"Boosters.Gravity.Price\")"
+							}
+						},
+						{
+							"id": "set-value",
+							"objectClass": "JSON_LS",
+							"sid": 858497329931388,
+							"parameters": {
+								"path": "\"Refresh-Boooster-Price\"",
+								"value": "JSON_Config.Get(\"Boosters.Refresh.Price\")"
+							}
+						},
+						{
+							"id": "set-value",
+							"objectClass": "JSON_LS",
+							"sid": 245055241210656,
+							"parameters": {
+								"path": "\"Tut\"",
+								"value": "1"
+							}
+						},
+						{
+							"callFunction": "LSLoaded",
+							"sid": 273738844737073
+						}
+					],
+					"sid": 857843310337370,
+					"isOrBlock": true
+				}
+			],
+			"sid": 430240843947771
+		},
+		{
+			"functionName": "LSLoaded",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 478225157497782,
+					"parameters": {
+						"seconds": "0",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 624152322086401,
+					"disabled": true,
+					"parameters": {
+						"layout": "Game"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 420242156102818,
+					"parameters": {
+						"layout": "Home"
+					}
+				}
+			],
+			"sid": 149984528476534
+		}
+	],
+	"sid": 371450850466786
+}

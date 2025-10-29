@@ -1,0 +1,23 @@
+{
+	"name": "TutPopup",
+	"plugin-id": "NinePatch",
+	"sid": 812445726631360,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"image": {
+		"width": 466,
+		"height": 456,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"fileType": "image/png",
+		"imageSpriteId": 6100189,
+		"useCollisionPoly": true,
+		"tag": ""
+	}
+}

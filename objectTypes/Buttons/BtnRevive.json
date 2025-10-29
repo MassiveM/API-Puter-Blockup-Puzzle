@@ -1,0 +1,60 @@
+{
+	"name": "BtnRevive",
+	"plugin-id": "Sprite",
+	"sid": 838142869319165,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 523,
+						"height": 239,
+						"originX": 0.4865480084775047,
+						"originY": 0.45234491540840455,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 9488237,
+						"collisionPoly": {
+							"points": [
+								0.023439839664585686,
+								0.07505912315808623,
+								0.49904397705544934,
+								0.01342550482081135,
+								0.9746481144463129,
+								0.07505912315808623,
+								0.9897947430256397,
+								0.502092050209205,
+								0.9685894630145823,
+								0.9115153720211024,
+								0.49904397705544934,
+								0.9555393851191558,
+								0.029498491096316436,
+								0.9115153720211024,
+								0.008293211085258819,
+								0.502092050209205
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 987311263151489,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

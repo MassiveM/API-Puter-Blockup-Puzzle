@@ -1,0 +1,2108 @@
+{
+	"name": "GeneralSheet",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "BombCounter",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 728620808416603
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Buttonss",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "FButtons",
+							"sid": 667124404090301
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "FButtons",
+							"sid": 516660088393996,
+							"parameters": {
+								"instance-variable": "W",
+								"value": "Self.Width"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "FButtons",
+							"sid": 206684731701299,
+							"parameters": {
+								"instance-variable": "H",
+								"value": "Self.Height"
+							}
+						}
+					],
+					"sid": 152115249279700
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-nth-touch-start",
+							"objectClass": "Touch",
+							"sid": 257836104177501,
+							"parameters": {
+								"touch-number": "0"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 639837155905754,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-touching-object",
+									"objectClass": "Touch",
+									"sid": 847199040543557,
+									"parameters": {
+										"object": "FButtons"
+									}
+								},
+								{
+									"id": "is-on-layer",
+									"objectClass": "FButtons",
+									"sid": 883163765132030,
+									"parameters": {
+										"layer": "GameState"
+									}
+								},
+								{
+									"id": "is-visible",
+									"objectClass": "FButtons",
+									"sid": 851791376415291
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 310697905878806,
+									"parameters": {
+										"variable": "ClickedButton",
+										"value": "FButtons.UID"
+									}
+								},
+								{
+									"id": "set-size",
+									"objectClass": "FButtons",
+									"sid": 202474313903239,
+									"parameters": {
+										"width": "Self.W * 0.95",
+										"height": "Self.H * 0.95"
+									}
+								}
+							],
+							"sid": 199898853411708
+						}
+					]
+				}
+			],
+			"sid": 702635933378487
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Responsive ",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "ShapesBox",
+							"sid": 574901068838305
+						}
+					],
+					"actions": [
+						{
+							"id": "add-child",
+							"objectClass": "ShapesBox",
+							"sid": 193629257429262,
+							"parameters": {
+								"child": "PlaceHolder",
+								"transform-x": true,
+								"transform-y": true,
+								"transform-w": true,
+								"transform-h": true,
+								"transform-a": false,
+								"transform-o": false,
+								"transform-z-elevation": true,
+								"transform-visibility": false,
+								"destroy-with-parent": false
+							}
+						}
+					],
+					"sid": 542844649258193
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "Board",
+							"sid": 990576003900379
+						}
+					],
+					"actions": [
+						{
+							"id": "add-child",
+							"objectClass": "Board",
+							"sid": 337804223817156,
+							"parameters": {
+								"child": "BoardShadow",
+								"transform-x": true,
+								"transform-y": true,
+								"transform-w": true,
+								"transform-h": true,
+								"transform-a": true,
+								"transform-o": false,
+								"transform-z-elevation": true,
+								"transform-visibility": false,
+								"destroy-with-parent": false
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Board",
+							"sid": 918385782641933,
+							"parameters": {
+								"instance-variable": "PPos",
+								"value": "Board.Y"
+							}
+						},
+						{
+							"id": "add-child",
+							"objectClass": "Board",
+							"sid": 631780502065661,
+							"parameters": {
+								"child": "RedBoarder",
+								"transform-x": true,
+								"transform-y": true,
+								"transform-w": true,
+								"transform-h": true,
+								"transform-a": true,
+								"transform-o": false,
+								"transform-z-elevation": true,
+								"transform-visibility": false,
+								"destroy-with-parent": false
+							}
+						}
+					],
+					"sid": 964773476841380
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 426328014546065,
+							"parameters": {
+								"variable": "ScreenWidth",
+								"comparison": 0,
+								"value": "ViewportWidth(0)"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 296733206776613,
+							"parameters": {
+								"variable": "ScreenWidth",
+								"value": "ViewportWidth(0)"
+							}
+						},
+						{
+							"callFunction": "Responsive",
+							"sid": 769446253981575
+						}
+					],
+					"sid": 200657865928435
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 136801315690865,
+							"parameters": {
+								"variable": "ScreenHeight",
+								"comparison": 0,
+								"value": "ViewportHeight(0)"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 538414470466282,
+							"parameters": {
+								"variable": "ScreenHeight",
+								"value": "ViewportHeight(0)"
+							}
+						},
+						{
+							"callFunction": "Responsive",
+							"sid": 228294087839322
+						}
+					],
+					"sid": 157012512304862
+				},
+				{
+					"functionName": "Responsive",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 853629019763704,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-size",
+									"objectClass": "Bg",
+									"sid": 459583482110277,
+									"parameters": {
+										"width": "ViewportWidth(0)",
+										"height": "ViewportHeight(0)"
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "Bg",
+									"sid": 491977255946037,
+									"parameters": {
+										"x": "LayoutWidth/2",
+										"y": "ViewportBottom(0)"
+									}
+								},
+								{
+									"id": "set-size",
+									"objectClass": "LightBlueBg",
+									"sid": 368906769197078,
+									"parameters": {
+										"width": "ViewportWidth(0)",
+										"height": "ViewportHeight(0)"
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "LightBlueBg",
+									"sid": 533436124716598,
+									"parameters": {
+										"x": "LayoutWidth/2",
+										"y": "LayoutHeight/2"
+									}
+								},
+								{
+									"id": "set-width",
+									"objectClass": "BgHills",
+									"sid": 640797738226523,
+									"parameters": {
+										"width": "ViewportWidth(0)"
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "BgHills",
+									"sid": 111314384869691,
+									"parameters": {
+										"x": "LayoutWidth/2",
+										"y": "ViewportBottom(0)"
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "BlackBg",
+									"sid": 607345568440167,
+									"parameters": {
+										"x": "LayoutWidth/2",
+										"y": "LayoutHeight/2"
+									}
+								},
+								{
+									"id": "set-size",
+									"objectClass": "BlackBg",
+									"sid": 313376687173108,
+									"parameters": {
+										"width": "ViewportWidth(0)",
+										"height": "ViewportHeight(0)"
+									}
+								},
+								{
+									"id": "set-y",
+									"objectClass": "ScorePanel",
+									"sid": 156669948319001,
+									"parameters": {
+										"y": "160"
+									}
+								},
+								{
+									"id": "set-y",
+									"objectClass": "CoinPanel",
+									"sid": 543145621961478,
+									"parameters": {
+										"y": "80"
+									}
+								},
+								{
+									"id": "set-y",
+									"objectClass": "BtnPause",
+									"sid": 273586614930194,
+									"parameters": {
+										"y": "90"
+									}
+								}
+							],
+							"sid": 329081951053558
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 970109458743569,
+									"parameters": {
+										"variable": "GameState",
+										"comparison": 0,
+										"value": "\"Ads\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "BtnClose",
+									"sid": 417860250863007,
+									"parameters": {
+										"x": "ViewportRight(0) - 150",
+										"y": "ViewportTop(0) + 150"
+									}
+								}
+							],
+							"sid": 379658698726832
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 443946760894912,
+									"parameters": {
+										"variable": "GameState",
+										"comparison": 0,
+										"value": "\"BombSelector\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-y",
+									"objectClass": "BtnCancel",
+									"sid": 777133391692638,
+									"parameters": {
+										"y": "CanvasToLayerY(10 , LayerToCanvasX(2,ViewportWidth(0)/2,Board.BBoxBottom + 100) , LayerToCanvasY(2,ViewportWidth(0)/2,Board.BBoxBottom + 100))"
+									}
+								}
+							],
+							"sid": 461629997445891,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-on-layer",
+											"objectClass": "txtLable",
+											"sid": 346440558777448,
+											"parameters": {
+												"layer": "\"BombSelector\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-y",
+											"objectClass": "txtLable",
+											"sid": 928510812330042,
+											"parameters": {
+												"y": "CanvasToLayerY(10 , LayerToCanvasX(2,ViewportWidth(0)/2,Board.BBoxTop - 100) , LayerToCanvasY(2,ViewportWidth(0)/2,Board.BBoxTop - 100))"
+											}
+										}
+									],
+									"sid": 805785646108759
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 785653667055793,
+									"parameters": {
+										"variable": "ScreenWidth",
+										"comparison": 5,
+										"value": "2110"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 560846219367551,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-y",
+											"objectClass": "Board",
+											"sid": 980160049981771,
+											"parameters": {
+												"y": "Self.PPos + 150"
+											}
+										},
+										{
+											"id": "set-layer-scale",
+											"objectClass": "System",
+											"sid": 131635087646493,
+											"parameters": {
+												"layer": "\"Game\"",
+												"scale": "1.25"
+											}
+										},
+										{
+											"id": "set-layer-scale",
+											"objectClass": "System",
+											"sid": 897568311452363,
+											"parameters": {
+												"layer": "\"Shadow\"",
+												"scale": "1.25"
+											}
+										},
+										{
+											"id": "set-layer-scale",
+											"objectClass": "System",
+											"sid": 382838980574503,
+											"parameters": {
+												"layer": "\"Tut\"",
+												"scale": "1.25"
+											}
+										},
+										{
+											"id": "set-layer-scale",
+											"objectClass": "System",
+											"sid": 856478465339575,
+											"parameters": {
+												"layer": "\"BombSelector\"",
+												"scale": "1.25"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 812234591325836,
+											"parameters": {
+												"variable": "DistanceValue",
+												"value": "DistanceValue * 1.25"
+											}
+										}
+									],
+									"sid": 639418151493773
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-angle",
+											"objectClass": "ShapesBox",
+											"sid": 367144454614567,
+											"parameters": {
+												"angle": "90"
+											}
+										}
+									],
+									"sid": 274429301204848,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 826283955910546,
+													"parameters": {
+														"variable": "ScreenWidth",
+														"comparison": 5,
+														"value": "2310"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-position",
+													"objectClass": "ShapesBox",
+													"sid": 927003803463899,
+													"parameters": {
+														"x": "Board.BBoxRight + (Self.Height/2) + 50",
+														"y": "Board.Y"
+													}
+												}
+											],
+											"sid": 558802315521609
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 918076692777226
+												}
+											],
+											"actions": [
+												{
+													"id": "set-position",
+													"objectClass": "ShapesBox",
+													"sid": 220440584085842,
+													"parameters": {
+														"x": "Board.BBoxRight + (Self.Height/2)",
+														"y": "Board.Y"
+													}
+												}
+											],
+											"sid": 261504102108606
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "for",
+													"objectClass": "System",
+													"sid": 835884822723739,
+													"parameters": {
+														"name": "\"\"",
+														"start-index": "1",
+														"end-index": "3"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 956547535973128,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-instance-variable",
+															"objectClass": "PlaceHolder",
+															"sid": 937939749585073,
+															"parameters": {
+																"instance-variable": "Index",
+																"comparison": 0,
+																"value": "loopindex"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-position",
+															"objectClass": "PlaceHolder",
+															"sid": 551145641637217,
+															"parameters": {
+																"x": "ShapesBox.X",
+																"y": "ShapesBox.BBoxTop + (loopindex * PlaceHolder.Width) + (5*loopindex)"
+															}
+														}
+													],
+													"sid": 161083789096868
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-position",
+											"objectClass": "BtnBombBooster",
+											"sid": 575778410574863,
+											"parameters": {
+												"x": "Board.BBoxLeft - 300",
+												"y": "ShapesBox.BBoxTop + (Self.Height / 2) + 50"
+											}
+										},
+										{
+											"id": "set-position",
+											"objectClass": "BtnGravityBooster",
+											"sid": 247366623366516,
+											"parameters": {
+												"x": "Board.BBoxLeft - 300",
+												"y": "ShapesBox.Y"
+											}
+										},
+										{
+											"id": "set-position",
+											"objectClass": "BtnRefreshBooster",
+											"sid": 382328162832522,
+											"parameters": {
+												"x": "Board.BBoxLeft - 300",
+												"y": "ShapesBox.BBoxBottom - (Self.Height / 2) - 50"
+											}
+										}
+									],
+									"sid": 191941175964237
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-x",
+											"objectClass": "CoinPanel",
+											"sid": 684910654728635,
+											"parameters": {
+												"x": "Board.BBoxLeft"
+											}
+										},
+										{
+											"id": "set-x",
+											"objectClass": "BtnPause",
+											"sid": 509093742323399,
+											"parameters": {
+												"x": "Board.BBoxRight + 80"
+											}
+										}
+									],
+									"sid": 642255069454696
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 565729230188334
+								}
+							],
+							"actions": [],
+							"sid": 561999350295540,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-layer-scale",
+											"objectClass": "System",
+											"sid": 782594660796501,
+											"parameters": {
+												"layer": "\"Game\"",
+												"scale": "1"
+											}
+										},
+										{
+											"id": "set-layer-scale",
+											"objectClass": "System",
+											"sid": 968466523922490,
+											"parameters": {
+												"layer": "\"Shadow\"",
+												"scale": "1"
+											}
+										},
+										{
+											"id": "set-layer-scale",
+											"objectClass": "System",
+											"sid": 515469235349413,
+											"parameters": {
+												"layer": "\"Tut\"",
+												"scale": "1"
+											}
+										},
+										{
+											"id": "set-layer-scale",
+											"objectClass": "System",
+											"sid": 177011781415801,
+											"parameters": {
+												"layer": "\"BombSelector\"",
+												"scale": "1"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 885960353789878,
+											"parameters": {
+												"variable": "DistanceValue",
+												"value": "300"
+											}
+										},
+										{
+											"id": "set-y",
+											"objectClass": "Board",
+											"sid": 538747816935285,
+											"parameters": {
+												"y": "Self.PPos"
+											}
+										}
+									],
+									"sid": 356065532677163
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-angle",
+											"objectClass": "ShapesBox",
+											"sid": 947423552922770,
+											"parameters": {
+												"angle": "0"
+											}
+										},
+										{
+											"id": "set-position",
+											"objectClass": "ShapesBox",
+											"sid": 507865211707143,
+											"parameters": {
+												"x": "Board.X",
+												"y": "Board.BBoxBottom + (Self.Height/2)"
+											}
+										}
+									],
+									"sid": 560869239819509,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "for",
+													"objectClass": "System",
+													"sid": 636572299972012,
+													"parameters": {
+														"name": "\"\"",
+														"start-index": "1",
+														"end-index": "3"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 695368878929709,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-instance-variable",
+															"objectClass": "PlaceHolder",
+															"sid": 227031668909289,
+															"parameters": {
+																"instance-variable": "Index",
+																"comparison": 0,
+																"value": "loopindex"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-position",
+															"objectClass": "PlaceHolder",
+															"sid": 725977203740604,
+															"parameters": {
+																"x": "ShapesBox.BBoxLeft + (loopindex * PlaceHolder.Width) + (5*loopindex)",
+																"y": "ShapesBox.Y - 10"
+															}
+														}
+													],
+													"sid": 118655800654688
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-position",
+											"objectClass": "BtnBombBooster",
+											"sid": 812386721778380,
+											"parameters": {
+												"x": "ShapesBox.BBoxRight - (Self.Height / 2) -50",
+												"y": "ShapesBox.BBoxBottom + 130"
+											}
+										},
+										{
+											"id": "set-position",
+											"objectClass": "BtnGravityBooster",
+											"sid": 612028018992084,
+											"parameters": {
+												"x": "ShapesBox.X",
+												"y": "ShapesBox.BBoxBottom + 130"
+											}
+										},
+										{
+											"id": "set-position",
+											"objectClass": "BtnRefreshBooster",
+											"sid": 926420199572932,
+											"parameters": {
+												"x": "ShapesBox.BBoxLeft + (Self.Height / 2) + 50",
+												"y": "ShapesBox.BBoxBottom + 130"
+											}
+										}
+									],
+									"sid": 451679950670746
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-x",
+											"objectClass": "CoinPanel",
+											"sid": 490759294107752,
+											"parameters": {
+												"x": "ViewportLeft(0) + 175"
+											}
+										},
+										{
+											"id": "set-x",
+											"objectClass": "BtnPause",
+											"sid": 860595097921026,
+											"parameters": {
+												"x": "ViewportRight(0) - 110"
+											}
+										}
+									],
+									"sid": 945003526268063
+								}
+							]
+						}
+					]
+				}
+			],
+			"sid": 630142196335671
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Music & SFX",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "PlaySFX",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "Name",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 123644231567561
+						},
+						{
+							"name": "Vol",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 905496159202064
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 981331714168924,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 914703069040648,
+									"parameters": {
+										"variable": "Name",
+										"comparison": 0,
+										"value": "\"bomb\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 374152203829907,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 841025537745836,
+											"parameters": {
+												"first-value": "JSON_LS.Get(\"SFX\")",
+												"comparison": 0,
+												"second-value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "play-by-name",
+											"objectClass": "Audio",
+											"sid": 590378397937877,
+											"parameters": {
+												"folder": "sounds",
+												"audio-file-name": "Name",
+												"loop": "not-looping",
+												"volume": "Vol",
+												"stereo-pan": "0",
+												"tag-optional": "Name"
+											}
+										}
+									],
+									"sid": 562490702639622
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 809199512983433
+								}
+							],
+							"actions": [],
+							"sid": 507470267699566,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 628793479005340,
+											"parameters": {
+												"first-value": "JSON_LS.Get(\"SFX\")",
+												"comparison": 0,
+												"second-value": "1"
+											}
+										},
+										{
+											"id": "is-tag-playing",
+											"objectClass": "Audio",
+											"sid": 107026526854179,
+											"parameters": {
+												"tag": "Name"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "play-by-name",
+											"objectClass": "Audio",
+											"sid": 640617191896825,
+											"parameters": {
+												"folder": "sounds",
+												"audio-file-name": "Name",
+												"loop": "not-looping",
+												"volume": "Vol",
+												"stereo-pan": "0",
+												"tag-optional": "Name"
+											}
+										}
+									],
+									"sid": 209239342848783
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 864944062148318,
+							"parameters": {
+								"first-value": "JSON_LS.Get(\"Music\")",
+								"comparison": 0,
+								"second-value": "1"
+							}
+						},
+						{
+							"id": "is-tag-playing",
+							"objectClass": "Audio",
+							"sid": 553223517292886,
+							"parameters": {
+								"tag": "\"music\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 558519338581371,
+							"parameters": {
+								"audio-file": "music2",
+								"loop": "looping",
+								"volume": "-5",
+								"stereo-pan": "0",
+								"tag-optional": "\"music\""
+							}
+						}
+					],
+					"sid": 833718954460759
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 298778404431186,
+							"parameters": {
+								"first-value": "JSON_LS.Get(\"Music\")",
+								"comparison": 0,
+								"second-value": "0"
+							}
+						},
+						{
+							"id": "is-tag-playing",
+							"objectClass": "Audio",
+							"sid": 278050741321000,
+							"parameters": {
+								"tag": "\"music\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 911985635574268,
+							"parameters": {
+								"tag": "\"music\""
+							}
+						}
+					],
+					"sid": 570921495138098
+				}
+			],
+			"sid": 313167829686263
+		},
+		{
+			"eventType": "variable",
+			"name": "AdsTime",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 865061744755051
+		},
+		{
+			"eventType": "variable",
+			"name": "IsWatchedAd",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 502702813616201
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Ads",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "PerviewAd",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "Do",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 123414930257073
+						},
+						{
+							"name": "state",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 947433454694479
+						},
+						{
+							"name": "boosterType",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 563106828860337
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 611382589662096,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 123261022805417,
+									"parameters": {
+										"variable": "Do",
+										"comparison": 0,
+										"value": "\"Open\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 726521128392419,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "layer-is-visible",
+											"objectClass": "System",
+											"sid": 816577887707367,
+											"parameters": {
+												"layer": "\"Ads\""
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 730213590278947,
+											"parameters": {
+												"variable": "AdsTime",
+												"value": "6"
+											}
+										},
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 581918846770198,
+											"parameters": {
+												"variable": "IsWatchedAd",
+												"value": "false"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 910290014311545,
+											"parameters": {
+												"variable": "GameState",
+												"value": "\"Ads\""
+											}
+										},
+										{
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 992351714394956,
+											"parameters": {
+												"layer": "\"Ads\"",
+												"visibility": "visible"
+											}
+										},
+										{
+											"id": "move-to-top",
+											"objectClass": "txtAdsLable",
+											"sid": 350838339524117
+										},
+										{
+											"id": "start-timer",
+											"objectClass": "txtAdsLable",
+											"sid": 580139046562248,
+											"behaviorType": "Timer",
+											"parameters": {
+												"duration": "AdsTime",
+												"type": "once",
+												"tag": "\"ad-time\""
+											}
+										}
+									],
+									"sid": 109359061506265,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-on-layer",
+													"objectClass": "BlackBg",
+													"sid": 546778343998276,
+													"parameters": {
+														"layer": "\"Ads\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-visible",
+													"objectClass": "BlackBg",
+													"sid": 519006967819805,
+													"parameters": {
+														"visibility": "visible"
+													}
+												},
+												{
+													"id": "set-opacity",
+													"objectClass": "BlackBg",
+													"sid": 540956183359705,
+													"parameters": {
+														"opacity": "100"
+													}
+												}
+											],
+											"sid": 954552537882693
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 186377973080180,
+													"parameters": {
+														"variable": "state",
+														"comparison": 0,
+														"value": "\"Booster\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-layer-visible",
+													"objectClass": "System",
+													"sid": 495324341082920,
+													"parameters": {
+														"layer": "\"BuyBoosters\"",
+														"visibility": "invisible"
+													}
+												}
+											],
+											"sid": 957613576408452
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 266973664632596,
+													"parameters": {
+														"variable": "state",
+														"comparison": 0,
+														"value": "\"Revive\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-layer-visible",
+													"objectClass": "System",
+													"sid": 874728882363188,
+													"parameters": {
+														"layer": "\"Revive\"",
+														"visibility": "invisible"
+													}
+												}
+											],
+											"sid": 757054402950123
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-on-layer",
+													"objectClass": "BtnClose",
+													"sid": 976702130674591,
+													"parameters": {
+														"layer": "\"Ads\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "move-to-top",
+													"objectClass": "BtnClose",
+													"sid": 296885271796540
+												},
+												{
+													"id": "set-position",
+													"objectClass": "BtnClose",
+													"sid": 707055435011207,
+													"parameters": {
+														"x": "ViewportRight(0) - 150",
+														"y": "ViewportTop(0) + 150"
+													}
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "BtnClose",
+													"sid": 114100899971549,
+													"parameters": {
+														"visibility": "invisible"
+													}
+												}
+											],
+											"sid": 250203166729953
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "txtAdsLable",
+													"sid": 631702098986621,
+													"parameters": {
+														"instance-variable": "Type",
+														"comparison": 0,
+														"value": "\"wait\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-visible",
+													"objectClass": "txtAdsLable",
+													"sid": 821854101717326,
+													"parameters": {
+														"visibility": "visible"
+													}
+												}
+											],
+											"sid": 260341305871136
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "txtAdsLable",
+													"sid": 573104934905289,
+													"parameters": {
+														"instance-variable": "Type",
+														"comparison": 0,
+														"value": "\"ready\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-visible",
+													"objectClass": "txtAdsLable",
+													"sid": 748663777121434,
+													"parameters": {
+														"visibility": "invisible"
+													}
+												}
+											],
+											"sid": 941866467392813
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "txtAdsLable",
+													"sid": 490549886678267,
+													"parameters": {
+														"instance-variable": "Type",
+														"comparison": 0,
+														"value": "\"time\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-visible",
+													"objectClass": "txtAdsLable",
+													"sid": 694287487047859,
+													"parameters": {
+														"visibility": "visible"
+													}
+												}
+											],
+											"sid": 632768613225096
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "txtAdsLable",
+													"sid": 707946881705829,
+													"parameters": {
+														"instance-variable": "Type",
+														"comparison": 0,
+														"value": "\"click\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-visible",
+													"objectClass": "txtAdsLable",
+													"sid": 523647665816203,
+													"parameters": {
+														"visibility": "invisible"
+													}
+												}
+											],
+											"sid": 544341125272501
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 224050107624552,
+									"parameters": {
+										"variable": "Do",
+										"comparison": 0,
+										"value": "\"Close\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 757570135678964,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "layer-is-visible",
+											"objectClass": "System",
+											"sid": 435793669760295,
+											"parameters": {
+												"layer": "\"Ads\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 620571261929134,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 783761783979820,
+													"parameters": {
+														"variable": "IsWatchedAd"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-layer-visible",
+													"objectClass": "System",
+													"sid": 548015918208722,
+													"parameters": {
+														"layer": "\"Ads\"",
+														"visibility": "invisible"
+													}
+												}
+											],
+											"sid": 548297608710984,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-eventvar",
+															"objectClass": "System",
+															"sid": 558792290622098,
+															"parameters": {
+																"variable": "state",
+																"comparison": 0,
+																"value": "\"Booster\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "BuyBoostersPopup",
+															"sid": 688763009385338,
+															"parameters": [
+																"\"Close\"",
+																"0",
+																"\"\""
+															]
+														},
+														{
+															"id": "wait",
+															"objectClass": "System",
+															"sid": 320407852011706,
+															"parameters": {
+																"seconds": "0",
+																"use-timescale": true
+															}
+														},
+														{
+															"callFunction": "GetReward",
+															"sid": 974925167737271,
+															"parameters": [
+																"boosterType"
+															]
+														}
+													],
+													"sid": 674060622469522
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-eventvar",
+															"objectClass": "System",
+															"sid": 531545229311833,
+															"parameters": {
+																"variable": "state",
+																"comparison": 0,
+																"value": "\"Revive\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 980419147052006,
+															"parameters": {
+																"variable": "GameState",
+																"value": "\"HUD\""
+															}
+														},
+														{
+															"callFunction": "ReviveGame",
+															"sid": 594879768951849
+														}
+													],
+													"sid": 614950217814625
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 393811556026857
+												}
+											],
+											"actions": [
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 211278810804497,
+													"parameters": {
+														"seconds": "0",
+														"use-timescale": true
+													}
+												},
+												{
+													"id": "set-layer-visible",
+													"objectClass": "System",
+													"sid": 558587278226944,
+													"parameters": {
+														"layer": "\"Ads\"",
+														"visibility": "invisible"
+													}
+												}
+											],
+											"sid": 929773462411311,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-eventvar",
+															"objectClass": "System",
+															"sid": 312556211296653,
+															"parameters": {
+																"variable": "state",
+																"comparison": 0,
+																"value": "\"Booster\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "BuyBoostersPopup",
+															"sid": 680490696061493,
+															"parameters": [
+																"\"Close\"",
+																"0",
+																"\"\""
+															]
+														}
+													],
+													"sid": 214804561728225
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-eventvar",
+															"objectClass": "System",
+															"sid": 325606764216916,
+															"parameters": {
+																"variable": "state",
+																"comparison": 0,
+																"value": "\"Revive\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "ShowGameOverLayer",
+															"sid": 424313445943830
+														}
+													],
+													"sid": 670487146364820
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-timer-running",
+							"objectClass": "txtAdsLable",
+							"sid": 404772038722756,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"ad-time\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 146280146829650,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "txtAdsLable",
+									"sid": 345994904836315,
+									"parameters": {
+										"instance-variable": "Type",
+										"comparison": 0,
+										"value": "\"time\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "txtAdsLable",
+									"sid": 349554115353006,
+									"parameters": {
+										"text": "int(AdsTime - txtAdsLable.Timer.CurrentTime(\"ad-time\"))"
+									}
+								}
+							],
+							"sid": 728140147490949
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 634261283317822,
+							"parameters": {
+								"first-value": "int(AdsTime - txtAdsLable.Timer.CurrentTime(\"ad-time\"))",
+								"comparison": 0,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "stop-timer",
+							"objectClass": "txtAdsLable",
+							"sid": 289095441326843,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"ad-time\""
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 301242488569835,
+							"parameters": {
+								"variable": "IsWatchedAd",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "BtnClose",
+							"sid": 474119831691136,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 503122445871344,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "txtAdsLable",
+									"sid": 421156630960289,
+									"parameters": {
+										"instance-variable": "Type",
+										"comparison": 0,
+										"value": "\"wait\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "txtAdsLable",
+									"sid": 874411951893428,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 344144410989123
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "txtAdsLable",
+									"sid": 946511125348843,
+									"parameters": {
+										"instance-variable": "Type",
+										"comparison": 0,
+										"value": "\"ready\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "txtAdsLable",
+									"sid": 176174875005004,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 493017602341402
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "txtAdsLable",
+									"sid": 457061186201961,
+									"parameters": {
+										"instance-variable": "Type",
+										"comparison": 0,
+										"value": "\"time\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "txtAdsLable",
+									"sid": 960484741045613,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 656767817788613
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "txtAdsLable",
+									"sid": 342962209977873,
+									"parameters": {
+										"instance-variable": "Type",
+										"comparison": 0,
+										"value": "\"click\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "txtAdsLable",
+									"sid": 930682205257196,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 961045892010979
+						}
+					]
+				}
+			],
+			"sid": 594638667221671
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Get Reward",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "GetReward",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "type",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 847335296081799
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 177102460166320,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 641807678571092,
+									"parameters": {
+										"variable": "type",
+										"comparison": 0,
+										"value": "\"Bomb\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to",
+									"objectClass": "JSON_LS",
+									"sid": 186948112310131,
+									"parameters": {
+										"path": "\"Bomb-Boooster\"",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-item",
+									"objectClass": "LocalStorage",
+									"sid": 655257171373404,
+									"parameters": {
+										"key": "projectname & \"_Data\"",
+										"value": "JSON_LS.ToCompactString"
+									}
+								},
+								{
+									"callFunction": "SelectBombSpot",
+									"sid": 314880319913915,
+									"parameters": [
+										"\"Open\""
+									]
+								}
+							],
+							"sid": 468387905288765
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 135465924703417,
+									"parameters": {
+										"variable": "type",
+										"comparison": 0,
+										"value": "\"Gravity\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to",
+									"objectClass": "JSON_LS",
+									"sid": 146298963400058,
+									"parameters": {
+										"path": "\"Gravity-Boooster\"",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-item",
+									"objectClass": "LocalStorage",
+									"sid": 840576412545608,
+									"parameters": {
+										"key": "projectname & \"_Data\"",
+										"value": "JSON_LS.ToCompactString"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 935908706212372,
+									"parameters": {
+										"variable": "CanUseGravity",
+										"value": "1"
+									}
+								},
+								{
+									"callFunction": "Gravity",
+									"sid": 814137376633767
+								}
+							],
+							"sid": 840203204977132
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 497635926236598,
+									"parameters": {
+										"variable": "type",
+										"comparison": 0,
+										"value": "\"Refresh\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to",
+									"objectClass": "JSON_LS",
+									"sid": 672677007409520,
+									"parameters": {
+										"path": "\"Refresh-Boooster\"",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-item",
+									"objectClass": "LocalStorage",
+									"sid": 976491890558196,
+									"parameters": {
+										"key": "projectname & \"_Data\"",
+										"value": "JSON_LS.ToCompactString"
+									}
+								},
+								{
+									"callFunction": "Refresh",
+									"sid": 351515198235166
+								}
+							],
+							"sid": 343680780819681
+						}
+					]
+				}
+			],
+			"sid": 600773268837186
+		}
+	],
+	"sid": 946561672112482
+}

@@ -1,0 +1,60 @@
+{
+	"name": "BtnWatchAds",
+	"plugin-id": "Sprite",
+	"sid": 595885924511700,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 373,
+						"height": 170,
+						"originX": 0.49865951742627346,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 878871,
+						"collisionPoly": {
+							"points": [
+								0.08579088471849866,
+								0.0058823529411764705,
+								0.9490616621983914,
+								0.058823529411764705,
+								0.9651474530831099,
+								0.1411764705882353,
+								0.9651474530831099,
+								0.8411764705882353,
+								0.9195710455764075,
+								0.9294117647058824,
+								0.045576407506702415,
+								0.888235294117647,
+								0.034852546916890076,
+								0.8411764705882353,
+								0.03753351206434316,
+								0.11176470588235295
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 182021675299088,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

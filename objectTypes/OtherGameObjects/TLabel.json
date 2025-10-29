@@ -1,0 +1,94 @@
+{
+	"name": "TLabel",
+	"plugin-id": "Sprite",
+	"sid": 542634733800967,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 146,
+						"height": 45,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 8762706,
+						"collisionPoly": {
+							"points": [
+								0.04794520547945205,
+								0.15555555555555556,
+								0.5,
+								0.37777777777777777,
+								0.8835616438356164,
+								0.37777777777777777,
+								0.9726027397260274,
+								0.5,
+								0.9657534246575342,
+								0.8888888888888888,
+								0.5,
+								0.9555555555555556,
+								0.03424657534246575,
+								0.8888888888888888,
+								0.0821917808219178,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 262,
+						"height": 45,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 845241,
+						"collisionPoly": {
+							"points": [
+								0.011450381679389313,
+								0.06666666666666667,
+								0.5,
+								0.044444444444444446,
+								0.9351145038167938,
+								0.37777777777777777,
+								0.9847328244274809,
+								0.5,
+								0.9809160305343512,
+								0.8888888888888888,
+								0.5,
+								0.9555555555555556,
+								0.011450381679389313,
+								0.9333333333333333,
+								0.007633587786259542,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 257469521030828,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

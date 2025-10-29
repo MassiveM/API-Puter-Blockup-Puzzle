@@ -1,0 +1,60 @@
+{
+	"name": "CupIcon",
+	"plugin-id": "Sprite",
+	"sid": 374918302003070,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 130,
+						"height": 87,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 8883339,
+						"collisionPoly": {
+							"points": [
+								0.35428571428571426,
+								0.49,
+								0.5,
+								0.17,
+								0.6485714285714286,
+								0.48714285714285716,
+								0.9142857142857143,
+								0.5,
+								0.7914285714285715,
+								0.6557142857142857,
+								0.5,
+								0.83,
+								0.21142857142857144,
+								0.6528571428571428,
+								0.08857142857142858,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 786953371009349,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

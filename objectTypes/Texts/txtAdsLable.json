@@ -1,0 +1,42 @@
+{
+	"name": "txtAdsLable",
+	"plugin-id": "Spritefont2",
+	"sid": 591570927741177,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [
+		{
+			"name": "Type",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 406889433133355
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 143029897122682
+		},
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 898792105689604
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 2048,
+		"height": 512,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"fileType": "image/png",
+		"imageSpriteId": 6733066,
+		"useCollisionPoly": true,
+		"tag": ""
+	}
+}

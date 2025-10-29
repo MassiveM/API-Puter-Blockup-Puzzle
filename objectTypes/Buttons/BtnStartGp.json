@@ -1,0 +1,52 @@
+{
+	"name": "BtnStartGp",
+	"plugin-id": "Sprite",
+	"sid": 209476507372308,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 342,
+						"height": 149,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 3216369,
+						"collisionPoly": {
+							"points": [
+								0.004184400104598973,
+								0.010610770176124622,
+								0.9958155998954009,
+								0.010610770176124622,
+								0.9958155998954009,
+								0.9893892298238753,
+								0.004184400104598973,
+								0.9893892298238753
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 457546764118585,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

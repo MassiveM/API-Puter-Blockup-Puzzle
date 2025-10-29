@@ -1,0 +1,34 @@
+{
+	"name": "txtBuyBooster",
+	"plugin-id": "Spritefont2",
+	"sid": 343035537498686,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 149732233625385
+		},
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 691889542341510
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 2048,
+		"height": 512,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"fileType": "image/png",
+		"imageSpriteId": 9264430,
+		"useCollisionPoly": true,
+		"tag": ""
+	}
+}

@@ -1,0 +1,66 @@
+{
+	"name": "ComboGlow1",
+	"plugin-id": "Sprite",
+	"sid": 118302012760922,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 452598741892449
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 378,
+						"height": 378,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 5239343,
+						"collisionPoly": {
+							"points": [
+								0.31370780098827705,
+								0.31370780098827705,
+								0.5,
+								0.2322820716189147,
+								0.7159015551460365,
+								0.28409844485396346,
+								0.7331736795577195,
+								0.5,
+								0.7257713405241412,
+								0.7257713405241412,
+								0.5,
+								0.7825226064482421,
+								0.2643588740977544,
+								0.7356411259022457,
+								0.21254250086270562,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 349833508453280,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -1,0 +1,52 @@
+{
+	"name": "FButtons",
+	"plugin-id": "Sprite",
+	"sid": 467169295050526,
+	"instanceVariables": [
+		{
+			"name": "W",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 980679304177648
+		},
+		{
+			"name": "H",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 228878566816450
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 712432933401004
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"BtnPause",
+		"BtnClose",
+		"BtnSFX",
+		"BtnMusic",
+		"BtnHome",
+		"BtnReset",
+		"BtnSFX2",
+		"BtnMusic2",
+		"BtnPlay",
+		"BtnRevive",
+		"BtnGOReset",
+		"BtnBombBooster",
+		"BtnGravityBooster",
+		"BtnRefreshBooster",
+		"BtnInfo",
+		"BtnCancel",
+		"BtnWatchAds",
+		"BtnClosePopup",
+		"BtnStartGp",
+		"BtnDoonDook",
+		"BtnNoThanks"
+	]
+}

@@ -1,0 +1,56 @@
+{
+	"name": "BoardShadow",
+	"plugin-id": "Sprite",
+	"sid": 540850559432133,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 1004,
+						"height": 884,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 9552561,
+						"collisionPoly": {
+							"points": [
+								0.253068533945028,
+								0,
+								1,
+								0.011591434550929768,
+								0.9917702925671052,
+								0.9847082831003043,
+								0.227956859430963,
+								1,
+								0,
+								0.9668201057372643,
+								0.020785544689927157,
+								0
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 555282933639745,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

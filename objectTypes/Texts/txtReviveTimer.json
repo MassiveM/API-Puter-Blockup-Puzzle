@@ -1,0 +1,34 @@
+{
+	"name": "txtReviveTimer",
+	"plugin-id": "Spritefont2",
+	"sid": 151849328079427,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 840991184718995
+		},
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 175193892983238
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 1024,
+		"height": 128,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"fileType": "image/png",
+		"imageSpriteId": 6555214,
+		"useCollisionPoly": true,
+		"tag": ""
+	}
+}

@@ -1,0 +1,29 @@
+{
+	"name": "txtComboNum",
+	"plugin-id": "Spritefont2",
+	"sid": 495050614760991,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 518187986659848
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 1700,
+		"height": 167,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"fileType": "image/png",
+		"imageSpriteId": 8627092,
+		"useCollisionPoly": true,
+		"tag": ""
+	}
+}

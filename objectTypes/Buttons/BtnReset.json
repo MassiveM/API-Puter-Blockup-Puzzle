@@ -1,0 +1,52 @@
+{
+	"name": "BtnReset",
+	"plugin-id": "Sprite",
+	"sid": 463414702749966,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 179,
+						"height": 177,
+						"originX": 0.5027932960893855,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 1175124,
+						"collisionPoly": {
+							"points": [
+								0.0015988989234548927,
+								0.011636167597089827,
+								1,
+								0.011636167597089827,
+								1,
+								0.9883638324029103,
+								0.0015988989234548927,
+								0.9883638324029103
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 450695147999281,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -1,0 +1,63 @@
+{
+	"name": "RadialProgress",
+	"plugin-id": "Sprite",
+	"sid": 781506919880500,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "skymen_RadialProgress",
+			"name": "RadialProgress",
+			"sid": 543017450363522
+		},
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 695996670624000
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 200,
+						"height": 220,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 2734271,
+						"collisionPoly": {
+							"points": [
+								0.02111244919464097,
+								0.06464768108603725,
+								0.978887550805359,
+								0.06464768108603725,
+								0.978887550805359,
+								0.9353523189139628,
+								0.02111244919464097,
+								0.9353523189139628
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 755127568742711,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

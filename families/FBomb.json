@@ -1,0 +1,26 @@
+{
+	"name": "FBomb",
+	"plugin-id": "Sprite",
+	"sid": 225918278890047,
+	"instanceVariables": [
+		{
+			"name": "spotUID",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 293056837945329
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 540322411127800
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"Bomb",
+		"BombEffect"
+	]
+}

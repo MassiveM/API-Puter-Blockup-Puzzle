@@ -1,0 +1,58 @@
+{
+	"name": "BtnDoonDook",
+	"plugin-id": "Sprite",
+	"sid": 698235054581969,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 510,
+						"height": 257,
+						"originX": 0.5,
+						"originY": 0.5019455252918288,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 3553123,
+						"collisionPoly": {
+							"points": [
+								0.07794317727090835,
+								0.006327870141099713,
+								0.9507402961184475,
+								0.05231301340250756,
+								0.9261544617847138,
+								0.9311401957316353,
+								0.039015606242496996,
+								0.8851550524702275,
+								0.028771508603441374,
+								0.8289509884840625,
+								0.028771508603441374,
+								0.1545022206500806,
+								0.032869147659063624,
+								0.11362653775105136
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 862631395699246,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

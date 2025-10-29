@@ -1,0 +1,61 @@
+{
+	"name": "FSpot",
+	"plugin-id": "Sprite",
+	"sid": 529581857961294,
+	"instanceVariables": [
+		{
+			"name": "xx",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 906774915284348
+		},
+		{
+			"name": "yy",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 953394091633153
+		},
+		{
+			"name": "Filled",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 140116435377945
+		},
+		{
+			"name": "Picked",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 767152784183203
+		},
+		{
+			"name": "Bomb",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 790947899911830
+		},
+		{
+			"name": "GravityBlockID",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 565756349934789
+		},
+		{
+			"name": "SimFree",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 253497361573034
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"Spot"
+	]
+}

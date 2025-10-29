@@ -1,0 +1,829 @@
+{
+	"projectFormatVersion": 1,
+	"savedWithRelease": 44903,
+	"name": "BlockUp Puzzle",
+	"runtime": "c3",
+	"useWorker": "dom",
+	"bundleAddons": true,
+	"usedAddons": [
+		{
+			"type": "plugin",
+			"id": "AJAX",
+			"name": "AJAX",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Arr",
+			"name": "Array",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Audio",
+			"name": "Audio",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Browser",
+			"name": "Browser",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Date",
+			"name": "Date",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Json",
+			"name": "JSON",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Keyboard",
+			"name": "Keyboard",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "LocalStorage",
+			"name": "Local storage",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Mouse",
+			"name": "Mouse",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "NinePatch",
+			"name": "9-patch",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Particles",
+			"name": "Particles",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "PlatformInfo",
+			"name": "Platform info",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Sprite",
+			"name": "Sprite",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Spritefont2",
+			"name": "Sprite font",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "TiledBg",
+			"name": "Tiled Background",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Touch",
+			"name": "Touch",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "MoveTo",
+			"name": "Move To",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Rotate",
+			"name": "Rotate",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Sin",
+			"name": "Sine",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Timer",
+			"name": "Timer",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Tween",
+			"name": "Tween",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "skymen_RadialProgress",
+			"name": "Radial Progress",
+			"author": "skymen",
+			"bundled": true,
+			"version": "1.0.0.1"
+		},
+		{
+			"type": "behavior",
+			"id": "wrap",
+			"name": "Wrap",
+			"author": "Scirra",
+			"bundled": false
+		}
+	],
+	"uniqueId": "43p8optb74l",
+	"objectTypes": {
+		"items": [
+			"TutPopup",
+			"TutBlack"
+		],
+		"subfolders": [
+			{
+				"items": [
+					"BtnClose",
+					"BtnGOReset",
+					"BtnHome",
+					"BtnMusic",
+					"BtnMusic2",
+					"BtnPause",
+					"BtnPlay",
+					"BtnReset",
+					"BtnRevive",
+					"BtnSFX",
+					"BtnSFX2",
+					"BtnBombBooster",
+					"BtnGravityBooster",
+					"BtnRefreshBooster",
+					"BtnInfo",
+					"BtnCancel",
+					"BtnWatchAds",
+					"BtnClosePopup",
+					"BtnStartGp",
+					"BtnDoonDook",
+					"BtnNoThanks"
+				],
+				"subfolders": [],
+				"name": "Buttons"
+			},
+			{
+				"items": [
+					"txtBestScore",
+					"txtComboNum",
+					"txtEarnedScore",
+					"txtGOBestScore",
+					"txtGOScore",
+					"txtReviveTimer",
+					"txtScore",
+					"txtCoins",
+					"txtAdsLable",
+					"txtLable",
+					"txtBoosterInventory",
+					"txtBuyBooster",
+					"txtCombo",
+					"txtStartGpLable",
+					"txtBoosterTut"
+				],
+				"subfolders": [],
+				"name": "Texts"
+			},
+			{
+				"items": [
+					"ArrayBlocksCount",
+					"ArrayColorsList",
+					"ArrayRemoveList",
+					"ArrayShapesList",
+					"ArrayTemp"
+				],
+				"subfolders": [],
+				"name": "Arrays"
+			},
+			{
+				"items": [
+					"Bg",
+					"BgClouds",
+					"BgHills",
+					"BgStuff",
+					"BlackBg",
+					"ItemBg",
+					"LightBlueBg"
+				],
+				"subfolders": [],
+				"name": "BgStuff"
+			},
+			{
+				"items": [
+					"AJAX",
+					"Audio",
+					"Browser",
+					"Date",
+					"Keyboard",
+					"LocalStorage",
+					"Mouse",
+					"PlatformInfo",
+					"Touch"
+				],
+				"subfolders": [],
+				"name": "General"
+			},
+			{
+				"items": [
+					"JSON_Config",
+					"JSON_LS",
+					"JSON_Shapes"
+				],
+				"subfolders": [],
+				"name": "Jsons"
+			},
+			{
+				"items": [
+					"BuyBoosterPopup",
+					"Popup"
+				],
+				"subfolders": [],
+				"name": "Popups"
+			},
+			{
+				"items": [
+					"Block",
+					"BlockBelow",
+					"BlockShadow",
+					"Board",
+					"BoardShadow",
+					"Bomb",
+					"BombEffect",
+					"BombParticles",
+					"BoosterIcon",
+					"BoosterInventoryLable",
+					"BuyBoosterTxtLable",
+					"Cheerful",
+					"CircleGlow",
+					"Coin",
+					"CoinBoosterInventory",
+					"CoinIcon",
+					"CoinPanel",
+					"CoinParent",
+					"Color",
+					"ComboGlow1",
+					"ComboGlow2",
+					"ComboPanel",
+					"ComboParent",
+					"ComboProgressBar",
+					"ComboSprite",
+					"CupIcon",
+					"EarnedScoreGlow",
+					"GameManager",
+					"GameOverPanle",
+					"GlowEffect",
+					"GOCupParent",
+					"Hand",
+					"Heart",
+					"LineEffect",
+					"Logo",
+					"LogoLight",
+					"NoSpaceLeft",
+					"Particles",
+					"PlaceHolder",
+					"RadialProgress",
+					"RedBoarder",
+					"ReviveCircle",
+					"ScorePanel",
+					"Shaker",
+					"ShapesBox",
+					"ShapesParent",
+					"Spot",
+					"SpotsParent",
+					"Sprite",
+					"Sprite4",
+					"SquareEffect",
+					"TLabel",
+					"TouchPos",
+					"TutBlock",
+					"TutBlockParent",
+					"TutTimer"
+				],
+				"subfolders": [],
+				"name": "OtherGameObjects"
+			}
+		]
+	},
+	"functionsName": "Functions",
+	"autosaveData": null,
+	"containers": [],
+	"families": {
+		"items": [
+			"FSpot",
+			"FBlock",
+			"FButtons",
+			"FItemBg",
+			"FBomb",
+			"FBoostersButton"
+		],
+		"subfolders": []
+	},
+	"layouts": {
+		"items": [
+			"Loader",
+			"Home",
+			"Game"
+		],
+		"subfolders": []
+	},
+	"eventSheets": {
+		"items": [
+			"GameSheet",
+			"LoaderSheet",
+			"HomeSheet",
+			"GeneralSheet"
+		],
+		"subfolders": []
+	},
+	"rootFileFolders": {
+		"script": {
+			"items": [],
+			"subfolders": []
+		},
+		"sound": {
+			"items": [
+				{
+					"name": "whoosh.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 910745724594977,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "put.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 912531657816350,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "return.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 102955749338792,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "score.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 812594818740160,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "no_space.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 419326432116082,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "beep.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 421390809293878,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "lose.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 653203316095664,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "revive.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 564082282086366,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "combo.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 334756528959919,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "music2.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 702265633695662,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "click.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 879043061491659,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "rows-cols2.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 843172704014698,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "get-coin.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 592976838569197,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "bomb.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 527264657583815,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "cheerful.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 352892794821314,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "gravity.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 828024311355150,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
+			"subfolders": [
+				{
+					"items": [
+						{
+							"name": "s1.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 216848122178139,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "s2.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 149878837789973,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "s3.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 394863395402732,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "s4.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 937940606898028,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "s5.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 851440284570951,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "s6.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 197146318830743,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "s7.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 934480873412019,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "s8.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 818107553797461,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "s9.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 766210521211616,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "s10.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 960148454095248,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "s11.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 615443836305576,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "s13.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 991840970802519,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "s14.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 473194231251023,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "s15.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 138764501432365,
+							"file-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": [],
+					"name": "score"
+				}
+			]
+		},
+		"music": {
+			"items": [],
+			"subfolders": []
+		},
+		"video": {
+			"items": [],
+			"subfolders": []
+		},
+		"font": {
+			"items": [
+				{
+					"name": "riffic-bold-webfont.woff",
+					"type": "application/font-woff",
+					"sid": 153813691799364,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "riffic-bold-webfont.woff2",
+					"type": "font/woff2",
+					"sid": 950221122720985,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"icon": {
+			"items": [
+				{
+					"name": "icon-16.png",
+					"type": "image/png",
+					"sid": 611704953852751,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-128.png",
+					"type": "image/png",
+					"sid": 474125477257775,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-512.png",
+					"type": "image/png",
+					"sid": 982927539145985,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-64.png",
+					"type": "image/png",
+					"sid": 289415499942657,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-32.png",
+					"type": "image/png",
+					"sid": 128762740634810,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "loading-logo.png",
+					"type": "image/png",
+					"sid": 847498173863595,
+					"icon-info": {
+						"purpose": "loading-logo"
+					}
+				},
+				{
+					"name": "icon-256.png",
+					"type": "image/png",
+					"sid": 865809580043480,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"general": {
+			"items": [
+				{
+					"name": "shapes.json",
+					"type": "application/json",
+					"sid": 109718797064797,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "ranking.json",
+					"type": "application/json",
+					"sid": 553851438719636,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Config.json",
+					"type": "application/json",
+					"sid": 118104682735815,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
+			"subfolders": []
+		}
+	},
+	"timelines": {
+		"items": [
+			"Timeline 1"
+		],
+		"subfolders": [
+			{
+				"items": [
+					"BlockGravity"
+				],
+				"subfolders": []
+			}
+		]
+	},
+	"flowcharts": {
+		"items": [],
+		"subfolders": []
+	},
+	"properties": {
+		"description": "BlockUp Puzzle",
+		"version": "1.0.1",
+		"autoIncrementVersion": false,
+		"author": "DoonDookStudio",
+		"authorEmail": "",
+		"authorWebsite": "https://doondook.studio",
+		"appId": "com.doondookstudio.blockuppuzzle",
+		"pixelRounding": false,
+		"zAxisScale": "normalized",
+		"fov": 0.7853981633974483,
+		"useLoaderLayout": false,
+		"fullscreenMode": "scale-outer",
+		"fullscreenQuality": "high",
+		"viewportFit": "auto",
+		"backgroundColor": [
+			0,
+			0,
+			0,
+			0
+		],
+		"splashColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"useThemeColor": false,
+		"themeColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"orientations": "portrait",
+		"webgpu": "auto",
+		"multitexturing": "auto",
+		"gpuPreference": "high-performance",
+		"scriptsType": "module",
+		"framerateMode": "vsync",
+		"sampling": "trilinear",
+		"downscaling": "high",
+		"renderingMode": "auto",
+		"anisotropicFiltering": "auto",
+		"zNear": 1,
+		"zFar": 10000,
+		"maxSpriteSheetSize": 2048,
+		"loaderStyle": "percent",
+		"preloadSounds": true,
+		"cordovaiOSScheme": "app",
+		"cordovaAndroidScheme": "https",
+		"exportFileStructure": "folders",
+		"uidAllocationMode": "increment"
+	},
+	"viewportWidth": 1080,
+	"viewportHeight": 1920,
+	"firstLayout": "Loader"
+}

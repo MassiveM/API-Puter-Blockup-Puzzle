@@ -1,0 +1,51 @@
+{
+	"name": "BlockGravity",
+	"linear": false,
+	"purpose": "any",
+	"transitionKeyframes": [
+		{
+			"x": 0,
+			"y": 0,
+			"sax": 0,
+			"say": 0,
+			"eax": 0,
+			"eay": 0,
+			"se": true,
+			"ee": false,
+			"sm": "cubic"
+		},
+		{
+			"x": 0.829,
+			"y": 0.958,
+			"sax": 0.025,
+			"say": -0.692,
+			"eax": -0.053,
+			"eay": 0.083,
+			"se": true,
+			"ee": true,
+			"sm": "cubic"
+		},
+		{
+			"x": 0.914,
+			"y": 0.182,
+			"sax": 0.025,
+			"say": 0,
+			"eax": -0.025,
+			"eay": 0,
+			"se": true,
+			"ee": true,
+			"sm": "cubic"
+		},
+		{
+			"x": 1,
+			"y": 1,
+			"sax": 0,
+			"say": 0,
+			"eax": 0,
+			"eay": 0,
+			"se": false,
+			"ee": true,
+			"sm": "cubic"
+		}
+	]
+}

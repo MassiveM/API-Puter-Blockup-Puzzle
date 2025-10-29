@@ -1,0 +1,96 @@
+{
+	"name": "FBlock",
+	"plugin-id": "Sprite",
+	"sid": 956496208826806,
+	"instanceVariables": [
+		{
+			"name": "xx",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 421621879266363
+		},
+		{
+			"name": "yy",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 798297334899740
+		},
+		{
+			"name": "PH",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 693382328018225
+		},
+		{
+			"name": "Parent",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 662067802601534
+		},
+		{
+			"name": "MainColor",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 978732847579505
+		},
+		{
+			"name": "HostUID",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 303134420390171
+		},
+		{
+			"name": "IsCoin",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 659901355157444
+		},
+		{
+			"name": "MyDX",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 183170078881183
+		},
+		{
+			"name": "MyDY",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 990316079587850
+		},
+		{
+			"name": "GetGravity",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 222283812260084
+		},
+		{
+			"name": "IsHovering",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 882238118844581
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 668258365538489
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"Block",
+		"BlockBelow"
+	]
+}

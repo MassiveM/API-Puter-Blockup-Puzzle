@@ -1,0 +1,19 @@
+{
+	"name": "FItemBg",
+	"plugin-id": "Sprite",
+	"sid": 885717141973783,
+	"instanceVariables": [
+		{
+			"name": "Index",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 448136191138945
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"ItemBg"
+	]
+}

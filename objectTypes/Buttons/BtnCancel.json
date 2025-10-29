@@ -1,0 +1,66 @@
+{
+	"name": "BtnCancel",
+	"plugin-id": "Sprite",
+	"sid": 985176829706621,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [
+		{
+			"name": "MainY",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 755547717950008
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 490,
+						"height": 198,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 8132967,
+						"collisionPoly": {
+							"points": [
+								0.07959183673469387,
+								0.010101010101010102,
+								0.9489795918367347,
+								0.05555555555555555,
+								0.9244897959183673,
+								0.9242424242424242,
+								0.04081632653061224,
+								0.8787878787878788,
+								0.030612244897959183,
+								0.8232323232323232,
+								0.030612244897959183,
+								0.15656565656565657,
+								0.03469387755102041,
+								0.11616161616161616
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 255441153909465,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

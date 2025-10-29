@@ -1,0 +1,34 @@
+{
+	"name": "FBoostersButton",
+	"plugin-id": "Sprite",
+	"sid": 576768740315184,
+	"instanceVariables": [
+		{
+			"name": "key1",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 445865258418502
+		},
+		{
+			"name": "price",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 101202596356044
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween2",
+			"sid": 192856542883098
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"BtnBombBooster",
+		"BtnGravityBooster",
+		"BtnRefreshBooster"
+	]
+}

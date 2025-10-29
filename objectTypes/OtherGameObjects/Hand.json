@@ -1,0 +1,66 @@
+{
+	"name": "Hand",
+	"plugin-id": "Sprite",
+	"sid": 578049488696846,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 983063869256078
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 177,
+						"height": 184,
+						"originX": 0.08852838010204081,
+						"originY": 0.09787465281970777,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 66089,
+						"collisionPoly": {
+							"points": [
+								0.03985969387755101,
+								0.04896751600048303,
+								0.5,
+								0.08157227387996618,
+								0.8141342474489796,
+								0.22829368433764038,
+								0.9203204719387755,
+								0.5,
+								0.8937739158163265,
+								0.869520589300809,
+								0.5,
+								0.8858229682405506,
+								0.22126116071428573,
+								0.728233305156382,
+								0.12834821428571427,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 569865152800708,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

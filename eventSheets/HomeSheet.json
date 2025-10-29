@@ -1,0 +1,1003 @@
+{
+	"name": "HomeSheet",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "GeneralSheet"
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Start ",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 104253017082718
+						}
+					],
+					"actions": [],
+					"sid": 720697790688100,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 626936411959487,
+									"parameters": {
+										"first-value": "JSON_Shapes.ToCompactString",
+										"comparison": 0,
+										"second-value": "\"{}\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 921949657117692,
+									"parameters": {
+										"layout": "Loader"
+									}
+								}
+							],
+							"sid": 262138550352929
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 705371940737228
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 577553860848109,
+									"parameters": {
+										"variable": "GameState",
+										"value": "\"Home\""
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 366133885193124,
+									"parameters": {
+										"layer": "\"Ranking\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 287120755015119,
+									"parameters": {
+										"layer": "\"Info\"",
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 738110209839145
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-on-layer",
+									"objectClass": "BgStuff",
+									"sid": 594311145414252,
+									"parameters": {
+										"layer": "\"Bg\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-child",
+									"objectClass": "BgHills",
+									"sid": 953007729274798,
+									"parameters": {
+										"child": "BgStuff",
+										"transform-x": true,
+										"transform-y": true,
+										"transform-w": false,
+										"transform-h": false,
+										"transform-a": true,
+										"transform-o": false,
+										"transform-z-elevation": true,
+										"transform-visibility": false,
+										"destroy-with-parent": false
+									}
+								}
+							],
+							"sid": 411952018438382
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 204891052389235,
+									"parameters": {
+										"object": "BgClouds"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "BgClouds",
+									"sid": 290283136749717,
+									"parameters": {
+										"x": "random(ViewportWidth(0)) + loopindex * Self.Width",
+										"y": "random(800)"
+									}
+								},
+								{
+									"id": "set-speed",
+									"objectClass": "BgClouds",
+									"sid": 115167830070629,
+									"behaviorType": "MoveTo",
+									"parameters": {
+										"speed": "random(40,100)"
+									}
+								}
+							],
+							"sid": 288827066488858
+						}
+					]
+				}
+			],
+			"sid": 743604256802876
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Buttons ",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-nth-touch-end",
+							"objectClass": "Touch",
+							"sid": 667354172655556,
+							"parameters": {
+								"touch-number": "0"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 846599294053150,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 556342046609426,
+									"parameters": {
+										"object": "FButtons"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-size",
+									"objectClass": "FButtons",
+									"sid": 933972661797785,
+									"parameters": {
+										"width": "Self.W",
+										"height": "Self.H"
+									}
+								}
+							],
+							"sid": 214270789842117
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 564147955347225,
+									"parameters": {
+										"variable": "GameState",
+										"comparison": 0,
+										"value": "\"Home\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 626160045100692,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-touching-object",
+											"objectClass": "Touch",
+											"sid": 801939768498361,
+											"parameters": {
+												"object": "BtnMusic2"
+											}
+										},
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "BtnMusic2",
+											"sid": 332854297962639,
+											"parameters": {
+												"unique-id": "ClickedButton"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "PlaySFX",
+											"sid": 239218756644002,
+											"parameters": [
+												"\"click\"",
+												"0"
+											]
+										},
+										{
+											"id": "set-value",
+											"objectClass": "JSON_LS",
+											"sid": 831285304897363,
+											"parameters": {
+												"path": "\"Music\"",
+												"value": "BtnMusic2.AnimationFrame"
+											}
+										},
+										{
+											"id": "set-item",
+											"objectClass": "LocalStorage",
+											"sid": 769000182196578,
+											"parameters": {
+												"key": "projectname & \"_Data\"",
+												"value": "JSON_LS.ToCompactString"
+											}
+										}
+									],
+									"sid": 411393085751735
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-touching-object",
+											"objectClass": "Touch",
+											"sid": 188369138016028,
+											"parameters": {
+												"object": "BtnSFX2"
+											}
+										},
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "BtnSFX2",
+											"sid": 897535770980054,
+											"parameters": {
+												"unique-id": "ClickedButton"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "PlaySFX",
+											"sid": 693314113567163,
+											"parameters": [
+												"\"click\"",
+												"0"
+											]
+										},
+										{
+											"id": "set-value",
+											"objectClass": "JSON_LS",
+											"sid": 371677520444510,
+											"parameters": {
+												"path": "\"SFX\"",
+												"value": "BtnSFX2.AnimationFrame"
+											}
+										},
+										{
+											"id": "set-item",
+											"objectClass": "LocalStorage",
+											"sid": 496054942502043,
+											"parameters": {
+												"key": "projectname & \"_Data\"",
+												"value": "JSON_LS.ToCompactString"
+											}
+										}
+									],
+									"sid": 599869894473556
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-touching-object",
+											"objectClass": "Touch",
+											"sid": 391146506424022,
+											"parameters": {
+												"object": "BtnPlay"
+											}
+										},
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "BtnPlay",
+											"sid": 726009042871831,
+											"parameters": {
+												"unique-id": "ClickedButton"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "PlaySFX",
+											"sid": 902399319896315,
+											"parameters": [
+												"\"click\"",
+												"0"
+											]
+										},
+										{
+											"id": "go-to-layout",
+											"objectClass": "System",
+											"sid": 536838458753125,
+											"parameters": {
+												"layout": "Game"
+											}
+										}
+									],
+									"sid": 528868344217318
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-touching-object",
+											"objectClass": "Touch",
+											"sid": 880278239520207,
+											"parameters": {
+												"object": "BtnInfo"
+											}
+										},
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "BtnInfo",
+											"sid": 697718820498593,
+											"parameters": {
+												"unique-id": "ClickedButton"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "PlaySFX",
+											"sid": 401869164861976,
+											"parameters": [
+												"\"click\"",
+												"0"
+											]
+										},
+										{
+											"callFunction": "InfoPopup",
+											"sid": 841773340926759,
+											"parameters": [
+												"\"Open\""
+											]
+										}
+									],
+									"sid": 131755468518214
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 873894953457882,
+									"parameters": {
+										"variable": "GameState",
+										"comparison": 0,
+										"value": "\"Ranking\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 164598519444063,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-touching-object",
+											"objectClass": "Touch",
+											"sid": 834848842706514,
+											"parameters": {
+												"object": "BtnClose"
+											}
+										},
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "BtnClose",
+											"sid": 538369213340270,
+											"parameters": {
+												"unique-id": "ClickedButton"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "PlaySFX",
+											"sid": 791058800135025,
+											"parameters": [
+												"\"click\"",
+												"0"
+											]
+										}
+									],
+									"sid": 356520122695226
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 354337928997360,
+									"parameters": {
+										"variable": "GameState",
+										"comparison": 0,
+										"value": "\"Info\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 227399567384873,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-touching-object",
+											"objectClass": "Touch",
+											"sid": 977038571656857,
+											"parameters": {
+												"object": "BtnDoonDook"
+											}
+										},
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "BtnDoonDook",
+											"sid": 668054709481522,
+											"parameters": {
+												"unique-id": "ClickedButton"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "PlaySFX",
+											"sid": 798163504760211,
+											"parameters": [
+												"\"click\"",
+												"0"
+											]
+										},
+										{
+											"id": "open-url-in-new-window",
+											"objectClass": "Browser",
+											"sid": 443754324856168,
+											"parameters": {
+												"url": "\"https://doondook.studio/\"",
+												"tag": "\"NewWindow\""
+											}
+										}
+									],
+									"sid": 343457847926877
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-touching-object",
+											"objectClass": "Touch",
+											"sid": 434699632582776,
+											"parameters": {
+												"object": "BtnClosePopup"
+											}
+										},
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "BtnClosePopup",
+											"sid": 201085054097827,
+											"parameters": {
+												"unique-id": "ClickedButton"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "PlaySFX",
+											"sid": 282281183243210,
+											"parameters": [
+												"\"click\"",
+												"0"
+											]
+										},
+										{
+											"callFunction": "InfoPopup",
+											"sid": 679135864734979,
+											"parameters": [
+												"\"Close\""
+											]
+										}
+									],
+									"sid": 858896632214002
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "BtnMusic2",
+							"sid": 486287706052808,
+							"parameters": {
+								"comparison": 0,
+								"number": "JSON_LS.Get(\"Music\") = 1 ? 0 : 1"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "BtnMusic2",
+							"sid": 218371386733520,
+							"parameters": {
+								"frame-number": "JSON_LS.Get(\"Music\") = 1 ? 0 : 1"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "BtnMusic2",
+							"sid": 957167404290483,
+							"parameters": {
+								"width": "Self.W ",
+								"height": "Self.H "
+							}
+						}
+					],
+					"sid": 589808048972310
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "BtnSFX2",
+							"sid": 359957794582985,
+							"parameters": {
+								"comparison": 0,
+								"number": "JSON_LS.Get(\"SFX\") = 1 ? 0 : 1"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "BtnSFX2",
+							"sid": 584647883967623,
+							"parameters": {
+								"frame-number": "JSON_LS.Get(\"SFX\") = 1 ? 0 : 1"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "BtnSFX2",
+							"sid": 395739106084891,
+							"parameters": {
+								"width": "Self.W ",
+								"height": "Self.H "
+							}
+						}
+					],
+					"sid": 690450608192150
+				}
+			],
+			"sid": 349803484965930
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Popup",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "Popup",
+							"sid": 443272960739849
+						}
+					],
+					"actions": [],
+					"sid": 769206406581024,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Popup",
+									"sid": 545900222606226,
+									"parameters": {
+										"instance-variable": "state",
+										"comparison": 0,
+										"value": "\"Info\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 203755871765437,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-on-layer",
+											"objectClass": "FButtons",
+											"sid": 514400439072644,
+											"parameters": {
+												"layer": "\"Info\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "add-child",
+											"objectClass": "Popup",
+											"sid": 338267413527542,
+											"parameters": {
+												"child": "FButtons",
+												"transform-x": true,
+												"transform-y": true,
+												"transform-w": true,
+												"transform-h": true,
+												"transform-a": true,
+												"transform-o": true,
+												"transform-z-elevation": true,
+												"transform-visibility": true,
+												"destroy-with-parent": false
+											}
+										}
+									],
+									"sid": 509875487896663
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 412758564546535,
+							"parameters": {
+								"first-value": "Popup.Tween.Progress(\"close\")",
+								"comparison": 4,
+								"second-value": "0.2"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 142594434512784,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Popup",
+									"sid": 184011711929633,
+									"parameters": {
+										"instance-variable": "state",
+										"comparison": 0,
+										"value": "\"Info\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 584579007976109,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-on-layer",
+											"objectClass": "BlackBg",
+											"sid": 853025169578286,
+											"parameters": {
+												"layer": "\"Info\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "tween-one-property",
+											"objectClass": "BlackBg",
+											"sid": 569735303222945,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"\"",
+												"property": "offsetOpacity",
+												"end-value": "0",
+												"time": "0.2",
+												"ease": "default",
+												"destroy-on-complete": "no",
+												"loop": "no",
+												"ping-pong": "no",
+												"repeat-count": "1"
+											}
+										}
+									],
+									"sid": 195723310373199
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tweens-finished",
+							"objectClass": "BlackBg",
+							"sid": 440897057891360,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 369775874699210,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-on-layer",
+									"objectClass": "BlackBg",
+									"sid": 655907120335907,
+									"parameters": {
+										"layer": "\"Info\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 589270806976449,
+									"parameters": {
+										"variable": "GameState",
+										"value": "\"Home\""
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 320540737167649,
+									"parameters": {
+										"layer": "\"Info\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-opacity",
+									"objectClass": "BlackBg",
+									"sid": 788041705882635,
+									"parameters": {
+										"opacity": "70"
+									}
+								}
+							],
+							"sid": 794654172390814
+						}
+					]
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Info",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"functionName": "InfoPopup",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "Do",
+									"type": "string",
+									"initialValue": "",
+									"comment": "",
+									"sid": 632404000705960
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 208698987153663,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 290588765727805,
+											"parameters": {
+												"variable": "Do",
+												"comparison": 0,
+												"value": "\"Open\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 589354407161581,
+											"parameters": {
+												"variable": "GameState",
+												"value": "\"Info\""
+											}
+										},
+										{
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 226933297426847,
+											"parameters": {
+												"layer": "GameState",
+												"visibility": "visible"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Popup",
+											"sid": 583724174755424,
+											"parameters": {
+												"instance-variable": "BackY",
+												"value": "Popup.Y"
+											}
+										},
+										{
+											"id": "tween-two-properties",
+											"objectClass": "Popup",
+											"sid": 823495756504751,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"\"",
+												"property": "position",
+												"end-x": "LayoutWidth/2",
+												"end-y": "LayoutHeight/2",
+												"time": "0.5",
+												"ease": "easeoutquint",
+												"destroy-on-complete": "no",
+												"loop": "no",
+												"ping-pong": "no",
+												"repeat-count": "1"
+											}
+										}
+									],
+									"sid": 371020741974516
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 515480716389022,
+											"parameters": {
+												"variable": "Do",
+												"comparison": 0,
+												"value": "\"Close\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "tween-one-property",
+											"objectClass": "Popup",
+											"sid": 623647087629158,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"close\"",
+												"property": "offsetY",
+												"end-value": "Self.BackY",
+												"time": "0.5",
+												"ease": "easeoutquint",
+												"destroy-on-complete": "no",
+												"loop": "no",
+												"ping-pong": "no",
+												"repeat-count": "1"
+											}
+										}
+									],
+									"sid": 118449373858044
+								}
+							]
+						}
+					],
+					"sid": 220162704953156
+				}
+			],
+			"sid": 120976385578891
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Moving BG Stuff",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "move-to-position",
+							"objectClass": "BgClouds",
+							"sid": 887532540026817,
+							"behaviorType": "MoveTo",
+							"parameters": {
+								"x": "ViewportRight(0) + Self.Width",
+								"y": "Self.Y",
+								"mode": "direct"
+							}
+						}
+					],
+					"sid": 792561651177308
+				}
+			],
+			"sid": 835608781798680
+		}
+	],
+	"sid": 490403966539120
+}

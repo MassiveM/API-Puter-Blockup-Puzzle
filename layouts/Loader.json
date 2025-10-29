@@ -1,0 +1,130 @@
+{
+	"name": "Loader",
+	"layers": [
+		{
+			"name": "Layer 0",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [],
+			"sid": 893758909839469,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"isHTMLElementsLayer": false,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0,
+				0,
+				0,
+				1
+			],
+			"isTransparent": false,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		}
+	],
+	"scene-graphs-folder-root": {
+		"items": [],
+		"subfolders": []
+	},
+	"sid": 672000407318684,
+	"nonworld-instances": [
+		{
+			"type": "ArrayShapesList",
+			"properties": {
+				"width": 10,
+				"height": 1,
+				"depth": 1
+			},
+			"uid": 16,
+			"sid": 519892946701758,
+			"tags": "",
+			"instanceVariables": {}
+		},
+		{
+			"type": "ArrayColorsList",
+			"properties": {
+				"width": 10,
+				"height": 1,
+				"depth": 1
+			},
+			"uid": 17,
+			"sid": 332640111550733,
+			"tags": "",
+			"instanceVariables": {}
+		},
+		{
+			"type": "ArrayRemoveList",
+			"properties": {
+				"width": 10,
+				"height": 1,
+				"depth": 1
+			},
+			"uid": 21,
+			"sid": 942658543430556,
+			"tags": "",
+			"instanceVariables": {}
+		},
+		{
+			"type": "ArrayBlocksCount",
+			"properties": {
+				"width": 0,
+				"height": 1,
+				"depth": 1
+			},
+			"uid": 50,
+			"sid": 829461807599953,
+			"tags": "",
+			"instanceVariables": {}
+		},
+		{
+			"type": "JSON_LS",
+			"properties": {},
+			"uid": 55,
+			"sid": 266426773033505,
+			"tags": "",
+			"instanceVariables": {}
+		},
+		{
+			"type": "ArrayTemp",
+			"properties": {
+				"width": 10,
+				"height": 1,
+				"depth": 1
+			},
+			"uid": 57,
+			"sid": 485438738624984,
+			"tags": "",
+			"instanceVariables": {}
+		},
+		{
+			"type": "JSON_Config",
+			"properties": {},
+			"uid": 179,
+			"sid": 483852081710632,
+			"tags": "",
+			"instanceVariables": {}
+		}
+	],
+	"effectTypes": [],
+	"width": 1080,
+	"height": 1920,
+	"unboundedScrolling": true,
+	"vpX": 0.5,
+	"vpY": 0.5,
+	"projection": "perspective",
+	"eventSheet": "LoaderSheet"
+}
